@@ -7,44 +7,22 @@ import sys
 
 
 
-def blackBoxFunction(ar, k, n):
+def divisibleSumPairs1(n, k, ar):
     # the results
     results = []
 
-    # n has a constraint of 2 < n < 100
-    if not 2 <= n <= 100:
-        print("n: ", n)
-        return results
-
-    # k has a constraint of being greater or equal to 1, but less than or equak to 100
-    if not 1 <= k <= 100:
-        print("k: ", k)
-        return results
-
     # now do the loop
-    for a_idx, i_value in enumerate(ar):
+    for i in range(0, len(ar)):
 
-        # constraint that 1 < ar[i] < 100
-        if not 1 <= i_value <= 100:
-            print("i:", i_value)
-            continue
-
-        for b_idx, j_value in enumerate(ar):
+        for j in range(i + 1, len(ar)):
 
             # this is the main part of the functions
-            if i_value < j_value and ((i_value + j_value) % k) == 0:
-                results.append((a_idx, b_idx))
+            if (ar[i] + ar[j]) % k == 0:
+                results.append((i, k))
 
     return results
         
 
-
-def divisibleSumPairs(n, k, ar):
-    # Write your code here
-    result = blackBoxFunction(ar, k, n)
-    print(len)
-
-    return len(result)
 
 
 def parse_input(fpath):
@@ -76,7 +54,8 @@ if __name__ == '__main__':
     n, k, ar, expected = parse_input(possible_inputs[3])
 
     # and now get the result
-    result = divisibleSumPairs(n, k, ar)
+    result = divisibleSumPairs1(n, k, ar)
+    # result = divisibleSumPairs2(n, k, ar)
 
     try:
         assert result == expected

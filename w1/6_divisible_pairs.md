@@ -37,3 +37,9 @@ Lets do that then
 
 
 17:00 - back from tree planting. Spade snapped. Doh.
+
+
+# 22:00 - next day. I was massively over thinking this. It was not as complex as I was making
+it out to be. Having said that I realise the double loop is a little vile.
+
+
