@@ -15,3 +15,4 @@ jobs:
     - name: Run tests and typechecks
       run: |
         python w1/7_sparsearray.py
+        python w2/mars.py
