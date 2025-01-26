@@ -1,3 +1,4 @@
+import sys
 
 def matchstrings(strings, queries):
     
@@ -70,8 +71,9 @@ if __name__ == "__main__":
                 result
             ))
         except AssertionError:
-            print("❌: error in {0} - {1} expected. {2} received".format(
+            msg = "❌: error in {0} - {1} expected. {2} received".format(
                 x,
                 qcount,
                 result
-            ))
+            )
+            sys.exit(msg)
