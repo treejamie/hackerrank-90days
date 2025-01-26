@@ -1,0 +1,17 @@
+name: Tests
+
+on:
+  push
+
+jobs:
+  test:
+    name: Le Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.11'
+    - name: Run tests and typechecks
+      run: |
+        python w1/7_sparsearray.py
