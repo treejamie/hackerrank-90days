@@ -37,10 +37,10 @@ def mars_exploration(s):
 if __name__ == "__main__":
     
     inputs = {
-        "w2/mars_1.txt": 3,
-        "w2/mars_2.txt": 1,
-        "w2/mars_3.txt": 0,
-        "w2/mars_tc3.txt": 12 
+        "w2/mars/mars_1.txt": 3,
+        "w2/mars/mars_2.txt": 1,
+        "w2/mars/mars_3.txt": 0,
+        "w2/mars/mars_tc3.txt": 12 
     }
 
     for k, v in inputs.items():
