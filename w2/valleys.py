@@ -10,15 +10,36 @@ def countingValleys(steps, path):
 
     # now, we start at zero and mutate an abstract concept of elevation
     elevation = 0
-    valleys = 0
-    for move in path_ints:
-        elevation += move
 
-        if elevation < 0 and move > 0:
-            valleys +=1 
+    # make a list of elevation based moves
+    path_count = [] 
+    valleys = 0
+    #
+    # and then you went in the garage to move.
+    # is valleys the total amount of times you go into the lowest number
+    #
+    #
+    for i, move in enumerate(path_ints):
+
+        # first move always zero
+        if i == 0:
+            path_count.append(0)
+        else:
+            path_count.append(path_ints[i - 1] + move)
+
+    # now we have a path count, so go over
+    max_depth = min(path_count)
+    print(path_count)
+    print(max_depth)
+    
+    # elevation += move
+
+    # if elevation < 0 and move > 0:
+    #     valleys +=1 
+
 
     # valleys can be zero but not less than that
-    return valleys - 1 if valleys -1 > 0 else 0
+    #return valleys - 1 if valleys -1 > 0 else 0
 
 
 
