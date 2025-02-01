@@ -12,7 +12,7 @@ jobs:
     - uses: actions/setup-python@v1
       with:
         python-version: '3.11'
-    - name: Test sparsearray
+    - name: Test W1/7 sparsearray
       run: |
         python w1/7_sparsearray.py
     - name: Test W2/1 - lonely integer
