@@ -2,8 +2,23 @@ import sys
 
 
 def countingValleys(steps, path):
-    print(steps, path)
-    pass
+    """
+    Count D as -1 and U as +1.
+    Valleys is the amount of times the counter ticks beneath zero minus 1
+    """
+    path_ints = [-1 if x == "D" else + 1 for x in path]
+
+    # now, we start at zero and mutate an abstract concept of elevation
+    elevation = 0
+    valleys = 0
+    for move in path_ints:
+        elevation += move
+
+        if elevation < 0 and move > 0:
+            valleys +=1 
+
+    # valleys can be zero but not less than that
+    return valleys - 1 if valleys -1 > 0 else 0
 
 
 
@@ -20,6 +35,9 @@ if __name__ == "__main__":
     inputs = {
         "w2/valleys/tc0.txt": 1,
         "w2/valleys/tc1.txt": 2,
+        "w2/valleys/tc2.txt": 0,
+        "w2/valleys/tc4.txt": 1,
+        "w2/valleys/tc5.txt": 1,
     }
 
     for k, v in inputs.items():
