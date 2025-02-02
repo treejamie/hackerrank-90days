@@ -28,9 +28,11 @@ def countingValleys(steps, path):
             path_count.append(path_ints[i - 1] + move)
 
     # now we have a path count, so go over
-    max_depth = min(path_count)
+    height = max(path_count)
+    depth = min(path_count)
     print(path_count)
-    print(max_depth)
+    print(height)
+    print(depth)
     
     # elevation += move
 
