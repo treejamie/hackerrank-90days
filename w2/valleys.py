@@ -1,7 +1,9 @@
 import sys
 
 
-def countingValleys(steps, path):
+
+
+def countingValleys2(steps, path):
     """
     Count D as -1 and U as +1.
     Valleys is the amount of times the counter ticks beneath zero minus 1
@@ -42,6 +44,34 @@ def countingValleys(steps, path):
 
     # valleys can be zero but not less than that
     #return valleys - 1 if valleys -1 > 0 else 0
+
+
+def countingValleys(steps, path):
+    print(path)
+    # we start at zero
+    altitude = 0
+
+    # define a journey to store moves
+    journey = []
+
+    # and now iterate through the steps
+    for i, move in enumerate(path):
+        match move:
+            case "D":
+                step = (altitude, altitude - 1)
+                journey.append(step)
+                altitude -= 1
+            case "U":
+                step = (altitude, altitude + 1)
+                journey.append(step)
+                altitude += 1
+    
+    print(journey)
+
+    # is this just a case of cancelling moves?
+    
+
+
 
 
 
