@@ -46,7 +46,7 @@ def countingValleys2(steps, path):
     #return valleys - 1 if valleys -1 > 0 else 0
 
 
-def countingValleys(steps, path):
+def countingValleys3(steps, path):
     print(path)
     # we start at zero
     altitude = 0
@@ -71,8 +71,27 @@ def countingValleys(steps, path):
     # is this just a case of cancelling moves?
     
 
+def countingValleys(steps, path):
+    # read the spec! sea level is magical.
+    valleys = 0
+    altitude = 0
 
+    # go over the steps
+    for p in path:
+        # if we're going down, shift altitude 
+        if p == 'D':
+            altitude -= 1
+        else:
+            # key part: we're coming out of a valley
+            # if altitude is -1 and we're coming up
+            if altitude == -1:
+                valleys +=1
+            
+            # increment altitude
+            altitude +=1
 
+    # return the valleys
+    return valleys
 
 
 if __name__ == "__main__":
