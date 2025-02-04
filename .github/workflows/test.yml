@@ -21,6 +21,9 @@ jobs:
     - name: Test W2/2 - grading students
       run: |
         python w2/grading.py
+    - name: Test W2/3 - flipping bits
+      run: |
+        python w2/bits.py
     - name: Test W2/4 - diagonal
       run: |
         python w2/diagonal.py
