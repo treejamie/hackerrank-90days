@@ -21,6 +21,9 @@ jobs:
     - name: Test W2/6 - counting valleys
       run: |
         python w2/valleys.py
+    - name: Test W2/7 - pangrams
+      run: |
+        python w2/pangrams.py
     - name: Test W2/8 - mars
       run: |
         python w2/mars.py
