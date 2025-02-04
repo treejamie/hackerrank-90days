@@ -3,7 +3,31 @@ import sys
 
 
 def flippingBits(n):
-    print(n)
+
+    # store results
+    results = []
+
+    # iterate over the things in the 
+    for x in n:
+        # format as 0 padded 32 bit binary string
+        bits = f'{x:032b}'
+
+        # now flip the bits into a list
+        flipped = ''
+        for b in bits:
+            if b == '0':
+                flipped += '1'
+            else:
+                flipped += '0'
+
+        # now move back into integer
+        flipped_int = int(flipped, 2)  # base 2
+        
+        # append to result
+        results.append(flipped_int)
+
+    # la fin
+    return results
 
 
 
@@ -16,10 +40,10 @@ if __name__ == "__main__":
 
         # make the data
         data = {
-            'grades': [],
+            'input': [],
             'expected': []
         }
-        mode = 'grades'
+        mode = 'input'
         for x in raw:
             cleaned = x.strip()
 
@@ -28,11 +52,13 @@ if __name__ == "__main__":
             else:
                 data[mode].append(int(cleaned))
 
-        return data['grades'], data['expected']
+        return data['input'], data['expected']
 
 
     inputs = [
-        "w2/grading/tc0.txt"
+        "w2/bits/tc0.txt",
+        "w2/bits/tc1.txt",
+        "w2/bits/tc2.txt",
     ]
 
     for i in inputs:
