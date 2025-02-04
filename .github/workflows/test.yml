@@ -18,6 +18,9 @@ jobs:
     - name: Test W2/1 - lonely integer
       run: |
         python w2/lonely.py
+    - name: Test W2/2 - grading students
+      run: |
+        python w2/grading.py
     - name: Test W2/6 - counting valleys
       run: |
         python w2/valleys.py
