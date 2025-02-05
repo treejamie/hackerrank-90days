@@ -27,6 +27,9 @@ jobs:
     - name: Test W2/4 - diagonal
       run: |
         python w2/diagonal.py
+    - name: Test W2/5 - counting sort
+      run: |
+        python w2/counting.py
     - name: Test W2/6 - counting valleys
       run: |
         python w2/valleys.py
