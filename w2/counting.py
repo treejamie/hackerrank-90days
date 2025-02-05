@@ -4,7 +4,7 @@ import sys
 
 def countingSort(arr):
     # make the counting array
-    count_list = [0 for _ in arr]
+    count_list = [0 for _ in range(100)]
 
     # now do the count
     for val in arr:
@@ -24,8 +24,6 @@ if __name__ == "__main__":
             _ = fp.readline()
             data = fp.readline()
             expected = fp.readline()
-            print(data)
-
         data = [int(x) for x in data.split()]
         expected = [int(x) for x in expected.split()]
         return data, expected
@@ -33,7 +31,8 @@ if __name__ == "__main__":
 
     inputs = [
         "w2/counting/tc0.txt",
-        "w2/counting/tc1.txt"
+        "w2/counting/tc1.txt",
+        "w2/counting/tc5.txt",
     ]
 
     for i in inputs:
@@ -43,15 +42,17 @@ if __name__ == "__main__":
         # assert
         try:
             assert x == expected
-            print("✅: success {0} - {1} expected and {2} received".format(
-                s,
-                expected,
-                x
-            ))
+            print("✅: success")
+            # print("✅: success {0} - {1} expected and {2} received".format(
+            #     s,
+            #     expected,
+            #     x
+            # ))
         except AssertionError:
-            msg = "❌: error in {0}:\n\texpected: {1}\n\treceived: {2} ".format(
-                s,
-                expected,
-                x
-            )
+            msg = "❌: error"
+            # msg = "❌: error in {0}:\n\texpected: {1}\n\treceived: {2} ".format(
+            #     s,
+            #     expected,
+            #     x
+            # )
             sys.exit(msg)
