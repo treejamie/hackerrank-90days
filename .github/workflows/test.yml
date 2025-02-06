@@ -39,3 +39,6 @@ jobs:
     - name: Test W2/8 - mars
       run: |
         python w2/mars.py
+    - name: Test W2/TEST
+      run: |
+        python w2/matrix.py
