@@ -24,7 +24,6 @@ def sockMerchant(n, ar):
 
 
 
-
 tests = [
     [
         9,
