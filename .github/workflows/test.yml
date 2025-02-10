@@ -30,3 +30,4 @@ jobs:
       run: |
         python w3/permuting/permuting.py
         python w3/subarray2/subarray.py
+        python w3/xor.py
