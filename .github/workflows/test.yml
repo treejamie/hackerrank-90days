@@ -29,3 +29,4 @@ jobs:
     - name: WK3 tests
       run: |
         python w3/permuting/permuting.py
+        python w3/subarray2/subarray.py
