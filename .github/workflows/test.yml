@@ -32,3 +32,4 @@ jobs:
         python w3/subarray.py
         python w3/xor.py
         python w3/migratory.py
+        python w3/triangle.py
