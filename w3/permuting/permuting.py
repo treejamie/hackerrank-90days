@@ -2,8 +2,23 @@ import sys
 
 
 def twoArrays(k, A, B):
-    # Write your code here
-    pass
+    # sort a ascending
+    a = sorted(A)
+
+    # sort b descending
+    b = sorted(B, reverse=True)
+
+    # store the results
+    results = []
+
+    # iterate over the arrays
+    for i in range(len(a)):
+        results.append(
+            a[i] + b[i] >= k
+        )
+
+    # all done
+    return "YES" if all(results) else "NO"
 
 
 tests = [
