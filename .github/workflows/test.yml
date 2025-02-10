@@ -28,6 +28,6 @@ jobs:
         python w2/matrix.py
     - name: WK3 tests
       run: |
-        python w3/permuting/permuting.py
-        python w3/subarray2/subarray.py
+        python w3/permuting.py
+        python w3/subarray.py
         python w3/xor.py
