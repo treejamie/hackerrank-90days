@@ -57,7 +57,7 @@ def findZigZagSequenceJC(a, n):
     # 3. pop the apex value from the end
     apex = a.pop()
 
-    # 4. slice into left and right – which is reversed to give use the zag to the zig
+    # 4. slice into left and right which is reversed to give use the zag to the zig
     left = a[ 0 : middle ]
     right = sorted(a[ middle : n ], reverse=True)
 
