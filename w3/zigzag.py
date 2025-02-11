@@ -43,7 +43,6 @@ def findZigZagSequenceOriginal(a, n):
     return [x for x in a]
 
 
-
 def findZigZagSequenceJC(a, n):
     """
     Much nicer - easily readable, no messy whiles and less to go wrong
