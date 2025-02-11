@@ -19,8 +19,6 @@ def maximumPerimeterTriangle(sticks):
             else:
                 return [-1]
 
-        
-
         # we have a solution
         solved = maybe
 

@@ -33,3 +33,4 @@ jobs:
         python w3/xor.py
         python w3/migratory.py
         python w3/triangle.py
+        python w3/zigzag.py
