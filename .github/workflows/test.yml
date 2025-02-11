@@ -38,5 +38,5 @@ jobs:
         python w3/pages.py
     - name: WK4 tests
       run: |
-        python w4/numbers.py
+        python wk4/numbers.py
 

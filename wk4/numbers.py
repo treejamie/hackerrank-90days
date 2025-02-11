@@ -14,14 +14,15 @@ def pickingNumbers(a):
     while i < l:
         # is next thing less than one?
         if a[i + 1] - a[i] <= 1:
-            # is this the end
+            # this the end? (beautiful friend, the end...)
             if i + 1 ==  l:
-                subs.append(ml)
+                subs.append(ml)  # bank the current max length cos the party is over
             else:
-                ml += 1
+                ml += 1   # increment the max length
         else:
-            subs.append(ml)
-            ml = 1
+            # nope, we reached the end of the streak
+            subs.append(ml)  # bank it
+            ml = 1           # reset the length
         
         # increment the index
         i += 1
