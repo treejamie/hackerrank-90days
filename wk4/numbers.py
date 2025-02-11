@@ -2,7 +2,7 @@ import sys
 
 def pickingNumbers(a):
     # sort it first
-    a.sort()
+    # a.sort()
 
     # set variabls up
     i = 0
@@ -11,14 +11,16 @@ def pickingNumbers(a):
     subs = []
 
     # now loop
-    while i < l:
+    while i <= l:
+        # this the end? (beautiful friend, the end...)
+        if i ==  l:
+            subs.append(ml)  # bank the current max length cos the party is over
+            ml = 1
+            break
+
         # is next thing less than one?
         if a[i + 1] - a[i] <= 1:
-            # this the end? (beautiful friend, the end...)
-            if i + 1 ==  l:
-                subs.append(ml)  # bank the current max length cos the party is over
-            else:
-                ml += 1   # increment the max length
+            ml += 1          # increment the max length
         else:
             # nope, we reached the end of the streak
             subs.append(ml)  # bank it
@@ -26,7 +28,8 @@ def pickingNumbers(a):
         
         # increment the index
         i += 1
-    
+
+    # le done
     return max(subs)
     
 
@@ -34,7 +37,7 @@ def pickingNumbers(a):
 tests = [
     [
         [4, 6, 5, 3, 3, 1],
-        4,
+        3,
         "test one"
     ],
     [
