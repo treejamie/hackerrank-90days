@@ -35,3 +35,5 @@ jobs:
         python w3/triangle.py
         python w3/zigzag.py
         python w3/exam_two_sets.py
+        python w3/pages.py
+
