@@ -35,11 +35,6 @@ def pageCount(n, p):
     return int(min([front, back]))
 
 
-    # back index
-    print(n, p)
-
-
-
 
 tests = [
     [
