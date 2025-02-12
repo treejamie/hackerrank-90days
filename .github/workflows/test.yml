@@ -39,4 +39,5 @@ jobs:
     - name: WK4 tests
       run: |
         python wk4/numbers.py
+        python wk4/rotation.py
 
