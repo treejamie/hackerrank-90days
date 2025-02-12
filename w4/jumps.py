@@ -20,7 +20,9 @@ def kangaroo(x1, v1, x2, v2):
 
     # this is the math bit 
     # if the distance between out two roo's "mod" the v2 - v1 is zero, they're gonna meet
-    if (x1 - x2) % (v2 - v1) == 0:
+    if v2 - v1 == 0:
+        return "NO"
+    elif (x1 - x2) % (v2 - v1) == 0:
         return "YES"
 
     # nope
@@ -45,6 +47,14 @@ tests = [
         "NO",
         "test two"
     ],
+    [
+        43,
+        2,
+        70,
+        2,
+        "NO",
+        "test ten"
+    ]
 ]
 
 targets = [
