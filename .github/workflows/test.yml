@@ -40,4 +40,5 @@ jobs:
       run: |
         python w4/numbers.py
         python w4/rotation.py
+        python w4/jumps.py
 
