@@ -1,8 +1,30 @@
 import sys
 
 def kangaroo(x1, v1, x2, v2):
-    return "PLLOP"
+    """
+    This is a lowest common multiplier question
+    
+    two roos'
 
+    1 starts at position X (x1) with velocity V(v1)
+    2 starts at position X (x2) with velocity V(v2)
+
+    The question is, can they ever arrive at the same place at the same time?
+
+    It could be brute forced and then check for membership, but that is dumb.
+
+    """
+    # if the one behind is not faster, NO. Logic.
+    if (x1 < x2 and v2 > v1) or (x2 < x1 and v1 > v2):
+        return "NO"
+
+    # this is the math bit 
+    # if the distance between out two roo's "mod" the v2 - v1 is zero, they're gonna meet
+    if (x1 - x2) % (v2 - v1) == 0:
+        return "YES"
+
+    # nope
+    return "NO"
 
 
 
