@@ -38,6 +38,6 @@ jobs:
         python w3/pages.py
     - name: WK4 tests
       run: |
-        python wk4/numbers.py
-        python wk4/rotation.py
+        python w4/numbers.py
+        python w4/rotation.py
 
