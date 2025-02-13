@@ -34,19 +34,19 @@ tests = {
         [
             [1, 2, 7, 1000],
             [(1, 2), (2, 7), (7, 1000)],
-            "test one"
+            "#1"
         ],
         [
             [1, 2, 3, 4, 5],
             [(1, 2), (2, 3), (3, 4), (4, 5)],
-            "test two"
+            "#2"
         ]
     ],
     "closest_numbers": [
         [
             [-20, -3916237, -357920, -3620601, 7374819, -7330761, 30, 6246457, -6461594, 266854],
             [-20, 30],
-            "test one"
+            "#1"
         ]
     ],
 }
@@ -82,13 +82,14 @@ for func, tests in tests.items():
         # and do the feedback
         try:
             assert result == expected
-            print("✅: SUCCESS ({2}) - {1} expected and {0} result".format(
+            print("✅: SUCCESS ({2} {3}) - {1} expected and {0} result".format(
                 result,
                 expected,
-                func
+                func,
+                name
             ))
         except AssertionError:
-            msg = "🛥️ FAILBOAT {3} {0} :\n\texpected: {2}\n\tresult: {1} ".format(
+            msg = "🛥️ FAILBOAT {3} {0} {0} :\n\texpected: {2}\n\tresult: {1} ".format(
                 name,
                 result,
                 expected,
