@@ -64,149 +64,76 @@ def buildslice(strategy, i=0, slices=None): # change the slices to an empty list
     return buildslice(strategy, right, slices)
 
 
-def get_strategy(length):
-    """
-    There has to be a way to calculate this on the fly,
-    perhaps I will do that, and this data can be turned
-    into a data structure. For now, it is a hard coded ting'
-    """
-    # make sure it is an int
-    length = int(length)
+def get_strategy(s, left, segments=None):
 
-    # dreaming of generating this programattically
-    table = {
-        1: [
-            [1]
-        ],
-        2: [
-            [1, 1],
-        ],
-        3: [
-            [1, 1, 1,],
-            [1, 2]
-        ],
-        4: [
-            [1, 1, 1, 1],
-            [1, 1, 2],
-            [2, 2]
-        ],
-        5: [
-            [1, 1, 1, 1, 1],
-            [1, 1, 1, 2],
-            [1, 2, 2],
-            [2, 3]
-        ],
-        6: [
-            [1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 2],
-            [1, 1, 2, 2],
-            [2, 2, 2],
-            [3, 3]
-        ],
-        7: [
-            [1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 2],
-            [1, 1, 1, 2, 2],
-            [1, 2, 2, 2],
-            [2, 2, 3],
-            [3, 4],
-        ],
-        8: [
-            [1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 2],
-            [1, 1, 1, 1, 2, 2],
-            [1, 1, 2, 2, 2],
-            [2, 2, 2, 2],
-            [4, 4],
-        ],
-        9: [
-            [1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 2],
-            [1, 1, 1, 1, 1, 2, 2],
-            [1, 1, 1, 2, 2, 2],
-            [1, 2, 2, 2, 2],
-            [4, 5],
-        ],
-        10: [
-            [1, 1, 1, 1, 1, 1, 1, 1, 2],
-            [1, 1, 1, 1, 1, 1, 2, 2],
-            [1, 1, 1, 1, 2, 2, 2],
-            [1, 1, 2, 2, 2, 2],
-            [2, 2, 2, 2, 2],
-            [5, 5],
-        ],
-        11: [
-            [1, 1, 1, 1, 1, 1, 1, 2, 2],
-            [1, 1, 1, 1, 1, 2, 2, 2],
-            [1, 1, 1, 2, 2, 2, 2],
-            [1, 2, 2, 2, 2, 2],
-            [2, 2, 2, 2, 3],
-            [3, 4, 4],
-            [5, 6],
-        ],
-        12: [
-            [1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
-            [1, 1, 1, 1, 2, 2, 2, 2],
-            [1, 1, 2, 2, 2, 2, 2],
-            [2, 2, 2, 2, 2, 2],
-            [3, 3, 3, 3],
-            [4, 4, 4],
-            [6, 6],
-        ],
-    }
-    return table[length]
+    # beware the default arg mutation issue
+    if segments is None:
+        segments = []
+    
+    # Base case -  string is empty, return the built segments
+    if not s:
+        return segments
+
+    # try different segment lengths
+    for length in range(1, len(s) + 1):
+        current_part = s[:length]         # Take the first 'length' characters
+        if current_part.startswith("0"):  # No leading zeros allowed
+            continue
+        
+        current_num = int(current_part)  # Convert to an integer
+
+        # If this is the first number, accept it and recurse
+        if left is None or current_num == left + 1:
+            result = get_strategy(s[length:], current_num, segments + [length])
+            if result:  # If we found a valid sequence, return it
+                return result
+
+    return None  # No valid sequence found
+
 
 
 def separateNumbers(s):
-    # stash the results
-    results = []
 
-    # iterate over the things
-    for x in s:
-        # get strategies
-        strategies = get_strategy( len(x) )
+    # get strategies
+    strategy = get_strategy(s, None)
 
-        # reset beautiful
-        beautiful = False
+    # if strategy is None: no
+    if strategy is None:
+        return ("NO", )
 
-        # and now iterate over the strategy
-        for strategy in strategies:
-            slices = buildslice( strategy )
+    # reset beautiful
+    beautiful = False
 
-            # make the numbers
-            numbers = slicer(x, slices)
+    # and now iterate over the strategy
+    slices = buildslice( strategy )
 
-            # is it beautiful?
-            left = numbers.pop(0)
-            beautiful = isBeautiful(left, numbers, False)
+    # make the numbers
+    numbers = slicer(s, slices)
 
-            # number would only be beautiful once, so break if True
-            if beautiful:
-                break
+    # is it beautiful?
+    left = numbers.pop(0)
+    beautiful = isBeautiful(left, numbers, False)
 
-        # now do the output
-        if beautiful and left != 0:
-            #print("YES {0}".format(left))
-            results.append(("YES", left))
-        else:
-            #print("NO")
-            results.append(("NO", ))
-
-    # print it for HR
-    return results
+    # now do the output
+    if beautiful and left != 0:
+        return ("YES", left)
+    else:
+        return ("NO", )
 
 
 
 tests = {
     "get_strategy": [
         [
-            1, 
-            [[1]],
+            "1234567891011",
+            None,
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
             "test one"
         ],
         [
-            5, 
-            [ [1, 1, 1, 1, 1], [1, 1, 1, 2], [1, 2, 2], [2, 3] ],
+            "00000000000000000000000000000000", 
+            None,
+            None,
             "test two"
         ],
 
@@ -262,25 +189,36 @@ tests = {
     ],
     "separateNumbers": [
         [
-            [ '1234', '91011', '99100', '101103', '010203', '13', '1' ],
-            [ ("YES",  1), ("YES", 9), ("YES", 99), ("NO",), ("NO",), ("NO",), ("NO",) ],
+            "1234",
+            ("YES", 1),
             "test one"
         ],
         [
-            ['010203'],
-            [("NO", )],
+            "91011",
+            ("YES", 9),
             "test two"
         ],
         [
-            ['99910001001', '7891011', '9899100', '999100010001'],
-            [ ("YES", 999), ("YES", 7), ("YES", 98), ("NO",) ],
+            "99910001001",
+            ("YES", 999),
             "test three"
+
+        ],
+        [  
+            "010203",
+            ("NO", ),
+            "test four"
+        ],
+        [
+            "99910001001",
+            ("YES", 999 ),
+            "test five"
         ]
     ],
 }
 
 skips = [
-    {"separateNumbers": None}
+
 ]
 
 for func, tests in tests.items():
