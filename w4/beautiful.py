@@ -54,7 +54,8 @@ def buildslice(strategy, i=0, slices=None):
     return buildslice(strategy, right, slices)
 
 
-def whichslice()
+def whichslice():
+    pass
 
 
 def separateNumbers(s):
