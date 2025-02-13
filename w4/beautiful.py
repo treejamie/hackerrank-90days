@@ -2,7 +2,7 @@ import sys
 
 
 
-def isBeautiful(left, remaining, maybe_beautiful):
+def is_beautiful(left, remaining, maybe_beautiful):
     """
     returns True if a number is beatiful
     """
@@ -20,7 +20,7 @@ def isBeautiful(left, remaining, maybe_beautiful):
     # if left  + 1 == right, it is beautiful
     if left + 1 == right:
         maybe_beautiful = True
-        return isBeautiful(right, remaining, maybe_beautiful)
+        return is_beautiful(right, remaining, maybe_beautiful)
     
     # base case - number is fugly
     else:
@@ -38,7 +38,7 @@ def slicer(s, pattern):
     return x
 
 
-def buildslice(strategy, i=0, slices=None): # change the slices to an empty list and side effects creep in.
+def build_slice(strategy, i=0, slices=None): # change the slices to an empty list and side effects creep in.
     # make slices a local list
     if slices is None:                      # If slices is a list, rather than none, then the frames point to
         slices = []                         # the same list over all function calls. Rather than get back correct
@@ -61,7 +61,7 @@ def buildslice(strategy, i=0, slices=None): # change the slices to an empty list
     slices.append( (left, right) )
 
     # and now
-    return buildslice(strategy, right, slices)
+    return build_slice(strategy, right, slices)
 
 
 def get_strategy(s, left, segments=None):
@@ -92,7 +92,7 @@ def get_strategy(s, left, segments=None):
 
 
 
-def separateNumbers(s):
+def separate_numberss(s):
 
     # get strategies
     strategy = get_strategy(s, None)
@@ -105,14 +105,14 @@ def separateNumbers(s):
     beautiful = False
 
     # and now iterate over the strategy
-    slices = buildslice( strategy )
+    slices = build_slice( strategy )
 
     # make the numbers
     numbers = slicer(s, slices)
 
     # is it beautiful?
     left = numbers.pop(0)
-    beautiful = isBeautiful(left, numbers, False)
+    beautiful = is_beautiful(left, numbers, False)
 
     # now do the output
     if beautiful and left != 0:
@@ -138,7 +138,7 @@ tests = {
         ],
 
     ],
-    "buildslice": [
+    "build_slice": [
         [
             [1, 2, 2],
             [(0, 1), (1, 3), (3, 5)],
@@ -175,7 +175,7 @@ tests = {
             "test three"
         ]
     ],
-    "isBeautiful": [
+    "is_beautiful": [
         [
             1, [2, 3, 4], False,
             True,
@@ -187,7 +187,7 @@ tests = {
             "test one"
         ]
     ],
-    "separateNumbers": [
+    "separate_numberss": [
         [
             "1234",
             ("YES", 1),
