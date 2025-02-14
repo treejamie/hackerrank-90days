@@ -1,6 +1,6 @@
 import sys
 
-def get_pairs(arr: list, pairs: None | list = None) -> list:
+def get_pairs_recurse(arr: list, pairs: None | list = None) -> list:
     # if pairs was none, make it a list
     if pairs is None:
         pairs = []
@@ -16,7 +16,30 @@ def get_pairs(arr: list, pairs: None | list = None) -> list:
     pairs.append((left, arr[0]))
 
     # recurse thyself
-    return get_pairs(arr, pairs)
+    return get_pairs_recurse(arr, pairs)
+
+
+def get_pairs(arr: list) -> list:
+
+    # the results 
+    pairs = []
+
+    # makes the loop cleaner if there's a previous
+    left = arr.pop(0)
+
+    # now iterate over the array
+    for item in arr:
+        pairs.append(
+            (left, item)
+        )
+        left = item
+    
+    # done, return it
+    return pairs
+        
+
+
+
 
 
 def closest_numbers(arr:list) -> list:
@@ -33,9 +56,13 @@ def closest_numbers(arr:list) -> list:
     vals = sorted([x for x in diff_dict.values()])
 
     # now return the key for the values
+    results = []
     for k, v in diff_dict.items():
         if v == vals[0]:
-            return list(k)
+            results.append(k[0])
+            results.append(k[1])
+
+    return results
 
 
 #
@@ -72,7 +99,7 @@ tests = {
         [
             {"transformer": closest_in, "fname": "w4/tc/closest4_in.txt"},
             {"transformer": closest_out, "fname": "w4/tc/closest4_out.txt"},
-            "HR tc4"
+            "HR tc4 - 100000 bags of cement"
         ]
     ],
 }
@@ -112,12 +139,14 @@ for func, tests in tests.items():
         # we are not skipping, so call the function with the args
         result = locals()[func](*test)
 
+        truncate_at = 10
+
         # and do the feedback
         try:
             assert result == expected
             print("✅: SUCCESS ({2} #{4} {3}) - {1} expected and {0} result".format(
-                result,
-                expected,
+                result[:truncate_at], "..." if len(result) > truncate_at else result,
+                expected[:truncate_at], "..." if len(expected) > truncate_at else expected,
                 func,
                 name,
                 i
@@ -125,8 +154,8 @@ for func, tests in tests.items():
         except AssertionError:
             msg = "🛥️ FAILBOAT #{3} {4} {0} {0} :\n\texpected: {2}\n\tresult: {1} ".format(
                 name,
-                result,
-                expected,
+                result[:truncate_at], "..." if len(result) > truncate_at else result,
+                expected[:truncate_at], "..." if len(expected) > truncate_at else expected,
                 func,
                 i
             )
