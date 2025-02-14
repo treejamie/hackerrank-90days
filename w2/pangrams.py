@@ -24,11 +24,6 @@ def pangram(maybe_pangram):
 
 
 
-
-
-
-
-
 if __name__ == "__main__":
 
     def parse_input(fname):
