@@ -43,4 +43,5 @@ jobs:
         python w4/jumps.py
         python w4/beautiful.py
         python w4/closest.py
+        python w4/towers.py
 
