@@ -1,6 +1,5 @@
-"""Foo bar"""
-import string
 import sys
+import string
 
 
 def pangram(maybe_pangram):
