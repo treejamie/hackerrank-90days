@@ -48,4 +48,4 @@ jobs:
         python w4/ceasar.py
     - name: WK5 tests
       run: |
-          python w5/minmax.py
+          python w5/maxmin.py
