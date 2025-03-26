@@ -1,8 +1,11 @@
 import sys
+from collections import Counter
 
 
 
 def anagram(s):
+    # O(n2) timed out
+    # This approach is O(n)
     # base case - if len(s) is odd, return -1
     if len(s) % 2 == 1:
         return -1
@@ -10,24 +13,19 @@ def anagram(s):
     # first determine where is halfway
     half = len(s) // 2
 
-    # split s into two list
-    a = sorted([x for x in s[:half]])
+    # split s into two lists - not sets - sets don't have duplicates
+    s1 = [x for x in s[:half]]
+    s2 = [x for x in s[half:]] # slicing
 
-    b = sorted([x for x in s[half:]])
-    print(a)
-    print(b)
+    # make two counters
+    c1 = Counter(s1)
+    c2 = Counter(s2)
 
-    # assume we replace everything
-    count = half
+    # the difference
+    diff = c1 - c2
 
-    # iterate over a and as x and if x is in a, reduce the count
-    for x in b:
-        if x in a:
-            count -= len([y for y in a if y == x])
-
-    print(count)
-    return count
-
+    # answer is the sum of the values
+    return sum(diff.values())
 
 
 
