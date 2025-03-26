@@ -46,4 +46,6 @@ jobs:
         python w4/towers.py
         python w4/mindiff.py
         python w4/ceasar.py
-
+    - name: WK5 tests
+      run: |
+          python w5/maxmin.py
