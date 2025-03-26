@@ -49,3 +49,4 @@ jobs:
     - name: WK5 tests
       run: |
           python w5/maxmin.py
+          python w5/passwd.py
