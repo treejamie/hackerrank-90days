@@ -6,6 +6,7 @@ import "fmt"
 func PlusMinus(arr []int32) float32 {
 
 	fmt.Println(arr)
+	fmt.Println("Hello")
 	return 0.1
 }
 
