@@ -15,10 +15,9 @@ jobs:
         with:
           go-version: '1.24'
 
-      - name: (Go) WK1 tests 
-      - working-directory: w1
-        run: |
-            go test -run Test_plus_minus
+      - name: (Go) WK1 tests
+        working-directory: w1
+        run: go test -run Test_plus_minus
   test-python:
     name: Test Python
     runs-on: ubuntu-latest
