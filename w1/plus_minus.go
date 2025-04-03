@@ -11,7 +11,7 @@ package w1
 
 import "fmt"
 
-func PlusMinus(arr []int32) []float64 {
+func PlusMinus(arr []int32) [3]string {
 
 	// the length is used a lot, so calculate that once
 	l := float64(len(arr))
@@ -35,18 +35,18 @@ func PlusMinus(arr []int32) []float64 {
 	// now calculate the ratios
 	var p_ratio float64 = float64(len(p)) / l 
 	var n_ratio float64 = float64(len(n)) / l 
-	var z_ratio float64 = float64(len(z)) / l 
+	var z_ratio float64 = float64(len(z)) / l
 
-	// solve the solution
-	solution := []float64{
-		p_ratio,
-		n_ratio,
-		z_ratio,
-	}
+	// make an array for the solutions
+	// note: it MUST have three items and only 3, so array - not slice
+	solution := [3]string{}
+	solution[0] = fmt.Sprintf("%.6f", p_ratio)
+	solution[1] = fmt.Sprintf("%.6f", n_ratio)
+	solution[2] = fmt.Sprintf("%.6f", z_ratio)
 
 	// Hackerank wants you to print them
 	for _, value := range solution {
-		fmt.Printf("%.6f", value)
+		fmt.Println(value)
 	}
 
 	// return the solution

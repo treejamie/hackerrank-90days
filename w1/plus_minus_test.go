@@ -1,20 +1,21 @@
 package w1
 
 import (
-	"fmt"
 	"os"
 	"strconv"
 	"strings"
 	"testing"
 )
 
-
+// check is a shortcut function for error handling in test cases
+// where error handling in a production manner would interfere with
+// readability and perhaps performance of code.
 func check(e error) {
     if e != nil {
         panic(e)
     }
 }
-// the most minimal function to read in the test case files.
+// ReadLines is the most minimal function to read in the test case files.
 // they should all be formatted in the right way, so error
 // handling is not a massive concern
 func ReadLines(path string) ([]string, error) {
@@ -23,6 +24,7 @@ func ReadLines(path string) ([]string, error) {
 	return strings.Split(strings.TrimSpace(string(data)), "\n"), nil
 }
 
+// Test_plus_minus ensures
 func Test_plus_minus(t *testing.T){
 	// test cases 
 	tcs := []string{
@@ -44,21 +46,21 @@ func Test_plus_minus(t *testing.T){
 			args[i] = int32(n)
 
 		}
-		expected := []string{
+		
+		// we expect an array of strings three items long
+		expected := [3]string{
 			strings.TrimSpace(lines[3]),
 			strings.TrimSpace(lines[4]),
 			strings.TrimSpace(lines[5]),
 		}
 
-
-
 		// call the function
 		got := PlusMinus(args)
 
-		// 
-		// fmt.Println(args)
-		fmt.Println(expected)
-		fmt.Println(got)
+		// and now compare got with expected
+		if got != expected {
+			t.Errorf("Test_plus_minus: %q, want %q", got, expected)
+		}
 
 	}
 }
