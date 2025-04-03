@@ -4,18 +4,32 @@ on:
   push
 
 jobs:
-  test:
-    name: Le Test
+  test-go:
+    name: Test GO Wk1
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.24'
+
+      - name: (Go) WK1 tests
+        working-directory: w1
+        run: go test -run Test_plus_minus
+  test-python:
+    name: Test Python
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
     - uses: actions/setup-python@v1
       with:
         python-version: '3.11'
-    - name: WK1 tests
+    - name: (Python) WK1 tests
       run: |
         python w1/7_sparsearray.py
-    - name: WK2 tests
+    - name: (Python) WK2 tests
       run: |
         python w2/lonely.py
         python w2/grading.py
@@ -26,7 +40,7 @@ jobs:
         python w2/pangrams.py
         python w2/mars.py
         python w2/matrix.py
-    - name: WK3 tests
+    - name: (Python) WK3 tests
       run: |
         python w3/permuting.py
         python w3/subarray.py
@@ -36,7 +50,7 @@ jobs:
         python w3/zigzag.py
         python w3/exam_two_sets.py
         python w3/pages.py
-    - name: WK4 tests
+    - name: (Python) WK4 tests
       run: |
         python w4/numbers.py
         python w4/rotation.py
@@ -46,7 +60,7 @@ jobs:
         python w4/towers.py
         python w4/mindiff.py
         python w4/ceasar.py
-    - name: WK5 tests
+    - name: (Python) WK5 tests
       run: |
           python w5/maxmin.py
           python w5/passwd.py
