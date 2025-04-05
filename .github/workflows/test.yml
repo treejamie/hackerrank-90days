@@ -5,8 +5,14 @@ on:
 
 jobs:
   test-elixir:
+    if: contains(github.ref, 'elixir/')
     name: Test Elixir
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-24.04]
+        otp: [27.x]
+        elixir: [1.18.3]
     steps:
       - uses: actions/checkout@v3
 
@@ -26,7 +32,8 @@ jobs:
           mix compile --force --
           mix test w1
   test-go:
-    name: Test GO Wk1
+    if: contains(github.ref, 'go/')
+    name: Test Go
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,6 +47,7 @@ jobs:
         working-directory: w1
         run: go test -run Test_plus_minus
   test-python:
+    if: contains(github.ref, 'python/')
     name: Test Python
     runs-on: ubuntu-latest
     steps:
