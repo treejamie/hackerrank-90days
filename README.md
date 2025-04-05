@@ -1,7 +1,7 @@
 # [Hackerrank 90 days](https://www.hackerrank.com/interview/preparation-kits/three-month-preparation-kit/three-month-week-three/challenges)
 
 
-Don't judge the layout of this repository in terms of "that's not how you lay out an Elixir project, or a Go project or a ...".  Do judge me on the code in this repository. Python was my strongest language when I started this and I think that shows. I'm hoping by the time I am at the end of it all, it's harder to tell what's my strongest language.
+Don't judge the layout of this repository in terms of "that's not how you lay out an Elixir project, or a Go project or a ...".  Feel free to judge me on the code in this repository. Python was my strongest language when I started this and I think that shows. I'm hoping by the time I am at the end of it all, it's harder to tell what's my strongest language.
 
 If you spot anything that you think I could do better, open a pull request. That'd be lovely
 
@@ -33,9 +33,9 @@ I'm not the best programmer on Earth, but I think I have the potential to be a p
 
 (_I made that word up_)
 
-This repository is a mixture of a number of languages and I've prioritised co-existance of languages at the expense of any one languages typical project layuout. For example the Elixir stuff isn't in a typical mix project. It was more important to the intention of what I'm doing here to have the languages side by side, so you can see similarities and differences.
+This repository is a mixture of a number of languages and I've prioritised coexistance of languages at the expense of any one languages typical project layout. For example the Elixir stuff isn't in a typical mix project. It was more important to the intention of what I'm doing here to have the languages side by side, so you can see similarities and differences.
 
-Obviously, I keep whatever idomatic language specific skills I posess in my approach to writing the code.
+Obviously, I keep whatever idoimatic language specific skills I possess in my approach to writing the code.
 
 ## 🤖 LLM usage
 
