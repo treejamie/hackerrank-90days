@@ -21,7 +21,7 @@ func TestMiniMaxSum(t *testing.T){
 
 	// iterate over the tests
 	for _, tc := range tcs {
-		// read in the files
+		// read: read in the lines of the file
 		lines, _ := testutils.ReadLines(tc)
 
 		// we want the first line for args
@@ -43,9 +43,8 @@ func TestMiniMaxSum(t *testing.T){
 			n, _ := strconv.ParseInt(arg, 10, 64)
 			expected[i] = int64(n)
 		}
-		//fmt.Printf("%T\n", args)
 
-		// now test
+		// test: got should be equal to expected
 		got := MiniMaxSum(args)
 		
 		if ! slices.Equal(got, expected) {

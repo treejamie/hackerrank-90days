@@ -15,13 +15,14 @@ import (
 	"slices"
 )
 
-var HR bool = false
+// If false, don't print to STDOUT
+const PRINT bool = false
 
-func sumint64(arr []int64) int64{
+func sumInt64(arr []int64) int64{
 	// make the sum variable
 	var sum int64
 
-	// iterate
+	// iterate over the slice and add valie to the sum
 	for _, value := range(arr){
 		sum += int64(value)
 
@@ -30,34 +31,27 @@ func sumint64(arr []int64) int64{
 }
 
 func MiniMaxSum(arr []int64) []int64 {
-	// fmt.Println(arr)
-	// copy arr for max values, sort it descending, pop last value
-	mx := make([]int64, len(arr))
-	copy(mx, arr)
+	/*
+	Clone the arr to give two slices, minimum and maximum.
+	Sort each slice and pop the last value - this gives max and min values.
+	Sum and you're done.
+	*/
+	// min sum: drop the max
+	mn := slices.Clone(arr)
+	slices.Sort(mn)
+	mnSum := sumInt64(mn[:len(mn)-1])
 
-	// sort mx ascending
-	slices.SortFunc(mx, func(a, b int64) int {
-		if a > b {
-			return -1
-		} else if a < b {
-			return 1
-		}
-		return 0
-	})
-	mx = mx[:len(mx)-1]
+	// max sum: drop the min
+	mx := slices.Clone(arr)
+	slices.Sort(mx)
+	slices.Reverse(mx)
+	mxSum := sumInt64(mx[:len(mx)-1])
 
-	// sort the for minimum values ascending and pop last value
-	slices.Sort(arr)
-	mn := arr[:len(arr)-1]
-
-	// now sum each
-	mx_sum := sumint64(mx)
-	mn_sum := sumint64(mn)
-
-	// if we're on hackerank, print it out
-	if HR {
-		fmt.Printf("%d %d", mn_sum, mx_sum)
+	// print: HackerRank insists on it for some challenges
+	if PRINT {
+		fmt.Printf("%d %d", mnSum, mxSum)
 	}
 
-	return []int64{mn_sum, mx_sum}
+	// return: makes it easier to test
+	return []int64{mnSum, mxSum}
 }
