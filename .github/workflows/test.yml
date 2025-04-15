@@ -45,7 +45,7 @@ jobs:
 
       - name: (Go) WK1 tests
         working-directory: w1
-        run: go test -run Test_plus_minus
+        run: go test -v
   test-python:
     if: contains(github.ref, 'python/')
     name: Test Python
