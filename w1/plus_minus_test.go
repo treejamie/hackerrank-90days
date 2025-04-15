@@ -1,28 +1,12 @@
 package w1
 
 import (
-	"os"
 	"strconv"
 	"strings"
 	"testing"
-)
 
-// check is a shortcut function for error handling in test cases
-// where error handling in a production manner would interfere with
-// readability and perhaps performance of code.
-func check(e error) {
-    if e != nil {
-        panic(e)
-    }
-}
-// ReadLines is the most minimal function to read in the test case files.
-// they should all be formatted in the right way, so error
-// handling is not a massive concern
-func ReadLines(path string) ([]string, error) {
-	data, err := os.ReadFile(path)
-	check(err)
-	return strings.Split(strings.TrimSpace(string(data)), "\n"), nil
-}
+	"github.com/treejamie/hackerrank-90days/testutils"
+)
 
 // Test_plus_minus ensures
 func Test_plus_minus(t *testing.T){
@@ -36,7 +20,7 @@ func Test_plus_minus(t *testing.T){
 	// now iterate over the test cases
 	for _, tc := range tcs {
 		// read in the files
-		lines, _ :=  ReadLines(tc)
+		lines, _ :=  testutils.ReadLines(tc)
 		// don't want the first line, but want the second
 		// and split it up into a slice.
 		parts := strings.Fields(lines[1])
