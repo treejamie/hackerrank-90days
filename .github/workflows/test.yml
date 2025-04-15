@@ -55,9 +55,8 @@ jobs:
     - uses: actions/setup-python@v1
       with:
         python-version: '3.11'
-    - name: (Python) WK1 tests
-      run: |
-        python w1/7_sparsearray.py
+    - name: (Python) tests
+      run: python -m unittest */*_test.py
     - name: (Python) WK2 tests
       run: |
         python w2/lonely.py
