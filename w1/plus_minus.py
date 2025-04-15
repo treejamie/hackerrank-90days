@@ -18,7 +18,7 @@ def plus_minus(arr: List[int]) -> List[str]:
        arr (List[int]): A list of integers
 
     Returns:
-        arr (List[str]): A list of three floats rounded to six decimal places.
+        List[str]: A list of three floats rounded to six decimal places.
 
     Example:
         >>> plus_minus([-4, 3, -9, 0, 4, 1])

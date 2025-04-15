@@ -1,5 +1,5 @@
 """
-The hello.py tests
+Tests for plus_minus
 """
 import unittest
 from pathlib import Path
@@ -19,10 +19,11 @@ class PlusMinusTest(unittest.TestCase):
     ]
 
     def test_plus_minus(self):
+        """Testing Plus Minus - Challenge 1 - Week 1"""
         # iterate over our testcases
         for tc in self.tcs:
             # read in the lines
-            lines = [line for line in testutils.read_lines(Path(tc))]
+            lines = list(testutils.read_lines(Path(tc)))
 
             # args: line 2 - but it needs splitting up and turning into a list of ints
             args = [int(value) for value in lines[1].split()]

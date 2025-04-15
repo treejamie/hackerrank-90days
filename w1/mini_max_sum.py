@@ -1,35 +1,39 @@
-from functools import reduce
+"""
+Mini Max Sum - Challenge 2 - Week 1
+https://www.hackerrank.com/challenges/three-month-preparation-kit-mini-max-sum/problem
+"""
+from typing import List
+
+# default to not printing
+PRINT = False
 
 
-def _sum(x):
-    """sums up the contexts of iterable x"""
-    # note: many ways to do this, let's do the fancy pants
-    # functional method, because this is a formal interview
-    return reduce(lambda a, b: a + b, x)
+def mini_max_sum(arr: List[int]) -> List[int]:
+    """
+    Calculates the minimum and maximum values obtainable by summing exactly
+    four of five integers. Optionally prints the result as space-separated values.
 
+    Parameters:
+       arr (List[int]): A list of integers
 
-
-def sortAndPop(arr, reverse=False):
-    """Given an array, sort it, then pop last value and return array"""
-    x = sorted(arr, reverse=reverse)
-    x.pop()
-    return x
-
-
-def miniMaxSum(arr):
-    """a function for a job interview"""
-    # make two sets to process
-    minArr = sortAndPop(arr)
-    maxArr = sortAndPop(arr, reverse=True)
+    Returns:
+        List[int]: A list of two integers
     
-    # handle that off to be summed
-    minValue = _sum(minArr)
-    maxValue = _sum(maxArr)
-    
-    # normally that would be sent off to a custom function
-    output = "{0} {1}".format(minValue, maxValue)
-    print(output)
+    Example:
+        >>> mini_max_sum([1, 2, 3, 4, 5,]) 
+        [10, 14]
+    """
 
+    # sort the array
+    arr = sorted(arr)
 
-# call the function and experience the joy
-miniMaxSum([1, 2, 3, 4, 5,])
+    # sum a slice of min and max
+    min_sum = sum(arr[:4])
+    max_sum = sum(arr[1:])
+
+    # printing?
+    if PRINT:
+        print(f"{min_sum} {max_sum}")
+
+    # all done, return
+    return [min_sum, max_sum]
