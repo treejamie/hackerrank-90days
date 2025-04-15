@@ -56,7 +56,7 @@ jobs:
       with:
         python-version: '3.11'
     - name: (Python) tests
-      run: python -m unittest */*_test.py
+      run: python -m unittest -v */*_test.py
     - name: (Python) WK2 tests
       run: |
         python w2/lonely.py

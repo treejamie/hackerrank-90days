@@ -1,49 +1,51 @@
 """
-This is the first challenge of week 1.
-
-https://www.hackerrank.com/challenges/three-month-preparation-kit-plus-minus/problem
-
-Given an array of integers, calculate the ratios of its elements that are
-positive, negative, and zero. Print the decimal value of each fraction on a
-new line with 6 places after the decimal.
-*/
+Plus Minus - Challenge 1 - Week 1
+https://www.hackerrank.com/challenges/three-month-preparation-kit-plus-minus/problem 
 """
+from typing import List
+
+# default to not printing
+PRINT = False
 
 
-
-
-def _format_ratio(x):
-
-    return format(x, '6f')
+def plus_minus(arr: List[int]) -> List[str]:
+    """
+    We get a list of integers, we return a list of three floats.
+    Each represents the ratio of positive/negative/zero numbers in arr.
+    [positive_ratio, negative_ratio, zero_ratio]
     
+    Parameters:
+       arr (List[int]): A list of integers
 
+    Returns:
+        arr (List[str]): A list of three floats rounded to six decimal places.
 
-def plusMinus(arr):
+    Example:
+        >>> plus_minus([-4, 3, -9, 0, 4, 1])
+        [0.500000, 0.333333, 0.166667]
+    """
     # the total amount of items in the array
-    l = len(arr)
-        
+    arr_len = len(arr)
+
     # positive values total and then as a ratio
-    p = len([x for x in arr if x > 0]) / l
-    fmt_p = _format_ratio(p)            
+    p = len([x for x in arr if x > 0]) / arr_len
+    fmt_p = format(p, '6f')
 
     # negative values
-    n = len([x for x in arr if x < 0]) / l
-    fmt_n = _format_ratio(n)
+    n = len([x for x in arr if x < 0]) / arr_len
+    fmt_n = format(n, '6f')
 
     # zero values
-    z = len([x for x in arr if x == 0]) / l
-    fmt_z = _format_ratio(z)
+    z = len([x for x in arr if x == 0]) / arr_len 
+    fmt_z = format(z, '6f')
 
     # build the answers and print them out
     answers = [fmt_p, fmt_n, fmt_z]
-    
-    for answer in answers:
-        print(answer)
+
+    # if we are printing, print
+    if PRINT:
+        for answer in answers:
+            print(answer)
 
     # return the answer because reasons
-    return answer
-
-
-
-# call it
-plusMinus([-4, 3, -9, 0, 4, 1])
+    return answers
