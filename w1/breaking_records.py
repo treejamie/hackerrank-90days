@@ -13,7 +13,6 @@ def breaking_records(scores: List[int]) -> List[int]:
         scores (List[int]): A list of integeres
 
     Returns: 
-    
         List[int]: Numbers of times records have been broken.
                    [0] is for breaking most points records,
                    [1] is for breaking least points records.
