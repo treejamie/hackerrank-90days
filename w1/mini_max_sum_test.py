@@ -12,14 +12,13 @@ class MiniMaxSumTest(unittest.TestCase):
     """
     Mini max sum test cases
     """
-    tcs = [
-        "w1/tc/2_0.txt",
-        "w1/tc/2_1.txt",
-        "w1/tc/2_14.txt",
-    ]
+    @classmethod
+    def setUpClass(cls):
+        """Get all the matching test case files"""
+        cls.tcs = sorted(Path("w1/tc").glob("2_*.txt"))
 
     def test_mini_max_sum(self):
-        """Testing Mini Max Sum - Challenge 2 - Week 1"""
+        """(W1/2): Mini Max Sum"""
         # iterate over our testcases
         for tc in self.tcs:
             # read in the lines

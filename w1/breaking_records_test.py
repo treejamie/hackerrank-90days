@@ -12,13 +12,13 @@ class BreakRecordsTest(unittest.TestCase):
     """
     Breaking records test cases
     """
-    tcs = [
-        "w1/tc/4_0.txt",
-        "w1/tc/4_1.txt"
-    ]
+    @classmethod
+    def setUpClass(cls):
+        """Get all the matching test case files"""
+        cls.tcs = sorted(Path("w1/tc").glob("4_*.txt"))
 
     def test_breaking_records(self):
-        """Testing Breaking Records - Challenge 4 - Week 1"""
+        """(W1/4): Breaking Records"""
         for tc in self.tcs:
             # read in the lines
             lines = list(testutils.read_lines(Path(tc)))

@@ -12,12 +12,13 @@ class TimeConversionTest(unittest.TestCase):
     """
     Time conversion test cases
     """
-    tcs = [
-        "w1/tc/3_0.txt"
-    ]
+    @classmethod
+    def setUpClass(cls):
+        """Get all the matching test case files"""
+        cls.tcs = sorted(Path("w1/tc").glob("3_*.txt"))
 
     def test_time_conversion(self):
-        """Testing Time Conversion - Challenge 3 - Week 1"""
+        """(W1/3): Time Conversion"""
         for tc in self.tcs:
             # read in the lines
             lines = list(testutils.read_lines(Path(tc)))

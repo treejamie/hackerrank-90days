@@ -12,14 +12,13 @@ class PlusMinusTest(unittest.TestCase):
     Ensure everything works as expected
     """
 
-    tcs = [
-        "w1/tc/1_0.txt",
-        "w1/tc/1_1.txt",
-        "w1/tc/1_2.txt",
-    ]
+    @classmethod
+    def setUpClass(cls):
+        """Get all the matching test case files"""
+        cls.tcs = sorted(Path("w1/tc").glob("1_*.txt"))
 
     def test_plus_minus(self):
-        """Testing Plus Minus - Challenge 1 - Week 1"""
+        """(W1/1): Plus Minus"""
         # iterate over our testcases
         for tc in self.tcs:
             # read in the lines
