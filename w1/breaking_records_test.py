@@ -18,7 +18,7 @@ class BreakRecordsTest(unittest.TestCase):
     ]
 
     def test_breaking_records(self):
-        """Testing Breaking Records - Challenge 4 - Week 1"""
+        """(W1/4): Breaking Records"""
         for tc in self.tcs:
             # read in the lines
             lines = list(testutils.read_lines(Path(tc)))

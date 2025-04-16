@@ -19,7 +19,7 @@ class MiniMaxSumTest(unittest.TestCase):
     ]
 
     def test_mini_max_sum(self):
-        """Testing Mini Max Sum - Challenge 2 - Week 1"""
+        """(W1/2): Mini Max Sum"""
         # iterate over our testcases
         for tc in self.tcs:
             # read in the lines

@@ -17,7 +17,7 @@ class TimeConversionTest(unittest.TestCase):
     ]
 
     def test_time_conversion(self):
-        """Testing Time Conversion - Challenge 3 - Week 1"""
+        """(W1/3): Time Conversion"""
         for tc in self.tcs:
             # read in the lines
             lines = list(testutils.read_lines(Path(tc)))

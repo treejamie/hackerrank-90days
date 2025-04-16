@@ -19,7 +19,7 @@ class PlusMinusTest(unittest.TestCase):
     ]
 
     def test_plus_minus(self):
-        """Testing Plus Minus - Challenge 1 - Week 1"""
+        """(W1/1): Plus Minus"""
         # iterate over our testcases
         for tc in self.tcs:
             # read in the lines
