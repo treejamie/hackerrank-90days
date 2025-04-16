@@ -1,13 +1,13 @@
 """
 Tests for camel case
 """
-import unittest
+
 from pathlib import Path
 from test import testutils
 from w1.camel_case import camel_case
 
 
-class CamelCaseTests(unittest.TestCase):
+class CamelCaseTests(testutils.TestCase):
     """
     Camel case test cases
     """
@@ -22,10 +22,10 @@ class CamelCaseTests(unittest.TestCase):
         # get the test data
         for tc in self.tcs:
 
-            # run subtest
+            # use a subtest scope
             with self.subTest(tc=tc):
                 # read in the lines
-                lines = list(testutils.read_lines(Path(tc)))
+                lines = list(self.read_lines(Path(tc)))
 
                 # problems are everyline up to the blank line, solutions are everything after
                 # however, this challenge works by reading the stdin, feeding it into the

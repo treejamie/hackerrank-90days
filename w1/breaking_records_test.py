@@ -1,14 +1,13 @@
 """
 Tests for Breaking Records
 """
-import unittest
 from pathlib import Path
 from test import testutils
 from w1.breaking_records import breaking_records
 
 
 
-class BreakRecordsTest(unittest.TestCase):
+class BreakRecordsTest(testutils.TestCase):
     """
     Breaking records test cases
     """
@@ -20,14 +19,17 @@ class BreakRecordsTest(unittest.TestCase):
     def test_breaking_records(self):
         """(W1/4): Breaking Records"""
         for tc in self.tcs:
-            # read in the lines
-            lines = list(testutils.read_lines(Path(tc)))
 
-            # args is lines[1], lines[0] is a count and is not needed
-            args = [int(value) for value in lines[1].split()]
+            # use a subtest scope
+            with self.subTest(tc=tc):
+                # read in the lines
+                lines = list(self.read_lines(Path(tc)))
 
-            # expected is lines[3]
-            expected = [int(value) for value in lines[3].split()]
+                # args is lines[1], lines[0] is a count and is not needed
+                args = [int(value) for value in lines[1].split()]
 
-            # we get what we expected
-            self.assertEqual(breaking_records(args), expected)
+                # expected is lines[3]
+                expected = [int(value) for value in lines[3].split()]
+
+                # we get what we expected
+                self.assertEqual(breaking_records(args), expected)
