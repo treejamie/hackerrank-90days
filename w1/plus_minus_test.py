@@ -1,13 +1,12 @@
 """
 Tests for plus_minus
 """
-import unittest
 from pathlib import Path
 from test import testutils
 from w1.plus_minus import plus_minus
 
 
-class PlusMinusTest(unittest.TestCase):
+class PlusMinusTest(testutils.TestCase):
     """
     Ensure everything works as expected
     """
@@ -22,7 +21,7 @@ class PlusMinusTest(unittest.TestCase):
         # iterate over our testcases
         for tc in self.tcs:
             # read in the lines
-            lines = list(testutils.read_lines(Path(tc)))
+            lines = list(self.read_lines(Path(tc)))
 
             # args: line 2 - but it needs splitting up and turning into a list of ints
             args = [int(value) for value in lines[1].split()]

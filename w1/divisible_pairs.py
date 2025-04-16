@@ -7,7 +7,7 @@ import sys
 
 
 
-def divisibleSumPairs2(n, k, ar):
+def divisible_sum_pairs(n, k, ar):
     """
     This is a O(n) version using a map as a lookup table
 

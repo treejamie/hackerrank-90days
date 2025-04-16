@@ -1,14 +1,13 @@
 """
 Tests for mini_max_sum
 """
-import unittest
 from pathlib import Path
 from test import testutils
 from w1.mini_max_sum import mini_max_sum
 
 
 
-class MiniMaxSumTest(unittest.TestCase):
+class MiniMaxSumTest(testutils.TestCase):
     """
     Mini max sum test cases
     """
@@ -22,7 +21,7 @@ class MiniMaxSumTest(unittest.TestCase):
         # iterate over our testcases
         for tc in self.tcs:
             # read in the lines
-            lines = list(testutils.read_lines(Path(tc)))
+            lines = list(self.read_lines(Path(tc)))
 
             # args: line 1 - but it needs splitting up and turning into a list of ints
             args = [int(value) for value in lines[0].split()]
