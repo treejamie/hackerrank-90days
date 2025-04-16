@@ -11,10 +11,7 @@ class MiniMaxSumTest(testutils.TestCase):
     """
     Mini max sum test cases
     """
-    @classmethod
-    def setUpClass(cls):
-        """Get all the matching test case files"""
-        cls.tcs = sorted(Path("w1/tc").glob("2_*.txt"))
+    glob_pattern = "w1/tc/2_*.txt"
 
     def test_mini_max_sum(self):
         """(W1/2): Mini Max Sum"""

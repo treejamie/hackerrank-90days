@@ -11,10 +11,7 @@ class BreakRecordsTest(testutils.TestCase):
     """
     Breaking records test cases
     """
-    @classmethod
-    def setUpClass(cls):
-        """Get all the matching test case files"""
-        cls.tcs = sorted(Path("w1/tc").glob("4_*.txt"))
+    glob_pattern = "w1/tc/4_*.txt"
 
     def test_breaking_records(self):
         """(W1/4): Breaking Records"""

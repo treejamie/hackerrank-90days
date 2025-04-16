@@ -11,10 +11,7 @@ class PlusMinusTest(testutils.TestCase):
     Ensure everything works as expected
     """
 
-    @classmethod
-    def setUpClass(cls):
-        """Get all the matching test case files"""
-        cls.tcs = sorted(Path("w1/tc").glob("1_*.txt"))
+    glob_pattern = "w1/tc/1_*.txt"
 
     def test_plus_minus(self):
         """(W1/1): Plus Minus"""

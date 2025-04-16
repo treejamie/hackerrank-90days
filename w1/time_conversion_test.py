@@ -12,10 +12,7 @@ class TimeConversionTest(testutils.TestCase):
     Time conversion test cases
     """
 
-    @classmethod
-    def setUpClass(cls):
-        """Get all the matching test case files"""
-        cls.tcs = sorted(Path("w1/tc").glob("3_*.txt"))
+    glob_pattern = "w1/tc/3_*.txt"
 
     def test_time_conversion(self):
         """(W1/3): Time Conversion"""
