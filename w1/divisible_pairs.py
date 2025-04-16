@@ -1,110 +1,46 @@
-#!/bin/python3
-import math
-import os
-import random
-import re
-import sys
+"""
+Divisible Sum Pairs - Challenge 6, Week 1.
+https://www.hackerrank.com/challenges/three-month-preparation-kit-divisible-sum-pairs/problem
+"""
+from typing import List
 
 
-
-def divisible_sum_pairs(n, k, ar):
+def divisible_sum_pairs(n: int, k: int, ar: List[int] ) -> int:
     """
-    This is a O(n) version using a map as a lookup table
+    Count the number of index pairs (i, j) such that i < j and (ar[i] + ar[j]) is divisible by k.
 
-    There was a few videos about this, but I struggled to get the underlying logic
-    so here I battled it out on paper until I got the very basic algo working.
+    Note: An O(n2) solution will timeout and fail. Using a frequency map is O(n), which passes.
 
-    What I can say is that I've never once, since 1998 had to use something like this
-    in any application I've built. That's either saying more about me than it is the test :) 
-
+    Parameters:
+        n (int): the length of the array `ar`
+        k (int): the integer to be used as the divisor
+        ar (List[int]): an array of integers
+    
+    Returns:
+        int: the number of pairs that are divisible by K
+    
+    Examples:
+        >>> divisible_sum_pairs(6, 5, [1, 3, 2, 6, 1, 2])
+        2
     """
-    # set the values up
-    db = {}
-    results = []
+    # setup
+    fmap = {}
+    match_counts = []
 
     # iterate over ar
     for value in ar:
         # get the mod first
         mod = value % k
 
-        # now get the complement
-        # but if mod is zero, use zero instead
+        # now get the complement, but if mod is zero, use zero instead
         comp = 0 if mod == 0 else k - mod
 
-        # if the complement is in the db as a value, append the value of it to results
-        hit = db.get(comp)
+        # if the complement is in the fmap as a value, append the value of it to match_counts
+        hit = fmap.get(comp)
         if hit is not None:
-            results.append(hit)
+            match_counts.append(hit)
 
-        # add the mod into the db, default to one, but
-        try:
-            db[mod]
-            db[mod] += 1
-        except KeyError:
-            db[mod] = 1
+        # update the frequency map.
+        fmap[mod] = fmap.get(mod, 0) + 1
 
-    return sum(results)
-
-
-
-def divisibleSumPairs1(n, k, ar):
-    """
-    I don't think the O n squared is going to win me any friends.
-    """
-    # the results
-    results = []
-
-    # now do the loop
-    for i in range(0, len(ar)):
-
-        for j in range(i + 1, len(ar)):
-
-            # this is the main part of the functions
-            if (ar[i] + ar[j]) % k == 0:
-                results.append((i, k))
-
-    return len(results)
-        
-
-
-def parse_input(fpath):
-    # read the file and assign the things
-    with open(fpath) as f:
-        l1 = f.readline()
-        l2 = f.readline()
-        l3 = f.readline()
-
-    # build the data
-    n, k = [int(x) for x in l1.split()]
-    ar = [int(x) for x in l2.split()]
-    expected = int(l3.split()[0])
-
-    return n, k, ar, expected
-
-
-if __name__ == '__main__':
-
-    possible_inputs = [
-        "w1/6_divisible_pairs_data_set.txt",
-        "w1/6_divisible_pairs_data_set_test_1.txt",
-        "w1/6_divisible_pairs_data_set_test_2.txt",
-        "w1/6_divisible_pairs_data_set_test_6.txt",
-        "w1/6_divisible_pairs_data_set_test_19.txt",
-        "w1/6_divisible_pairs_data_set_on.txt",
-        "w1/6_divisible_pairs_data_set_example.txt",
-    ]
-
-    # get the input becasue now I am setup to handle the hidden test cases
-    n, k, ar, expected = parse_input(possible_inputs[0])
-
-    # and now get the result
-    #result = divisibleSumPairs1(n, k, ar)
-    result = divisibleSumPairs2(n, k, ar)
-
-    try:
-        assert result == expected
-        print("yep")
-    except AssertionError:
-        print ("nope")
-        print ("expected: ", expected)
-        print ("got: ", result)
+    return sum(match_counts)
