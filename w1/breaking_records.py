@@ -1,12 +1,26 @@
+"""
+Breaking the Records - Challenge 4, Week 1.
+https://www.hackerrank.com/challenges/three-month-preparation-kit-breaking-best-and-worst-records/problem
+"""
+from typing import List
 
 
-def breakingRecords(scores):
+def breaking_records(scores: List[int]) -> List[int]:
     """
-    scores: list of all scores over a season of games
+    Given a list of scores for season of games, return
 
-    returns: a list of two items where:
-      [0] is amount of times highscore was broken
-      [1] is amount of times lowscore was broken
+    Parameters:
+        scores (List[int]): A list of integeres
+
+    Returns: 
+    
+        List[int]: Numbers of times records have been broken.
+                   [0] is for breaking most points records,
+                   [1] is for breaking least points records.
+    
+    Example:
+        >>> breaking_records([3, 4, 21, 36, 10, 28, 35, 5, 24, 42])
+        [4, 0]
     """
     # keep track of the low and high scores.
     hc = [] # note: final high count is this list length
@@ -31,7 +45,7 @@ def breakingRecords(scores):
         except ValueError:
             _mn = 0
 
-        # count the highs and lows 
+        # count the highs and lows
         if s > _mx:
             hc.append(s)
 
@@ -46,14 +60,4 @@ def breakingRecords(scores):
     return [
         len(hc),
         len(lc)
-    ] 
-    
-
-# the scores
-scores = [10, 5, 20, 20, 4, 5, 2, 25, 1]
-
-# call the function
-r = breakingRecords(scores)
-
-# the result
-print(r)
+    ]
