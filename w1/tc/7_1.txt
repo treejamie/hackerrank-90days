@@ -6,3 +6,7 @@ fgh
 de
 lmn
 fgh
+
+1
+0
+1
