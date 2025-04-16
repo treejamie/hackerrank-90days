@@ -12,10 +12,7 @@ class DivisibleSumPairsTests(testutils.TestCase):
     Tests for divisible sum parirs
     """
 
-    @classmethod
-    def setUpClass(cls):
-        """Get all the matching test case files"""
-        cls.tcs = sorted(Path("w1/tc").glob("7_*.txt"))
+    glob_pattern = "w1/tc/7_*.txt"
 
     def test_sparse_array(self):
         """(W1/7): Sparse Array Tests"""

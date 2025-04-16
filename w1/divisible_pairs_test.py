@@ -12,11 +12,7 @@ class DivisibleSumPairsTests(testutils.TestCase):
     Tests for divisible sum parirs
     """
 
-    @classmethod
-    def setUpClass(cls):
-        """Get all the matching test case files"""
-        cls.tcs = sorted(Path("w1/tc").glob("6_*.txt"))
-
+    glob_pattern = "w1/tc/6_*.txt"
 
     def test_divisible_sum_pairs(self):
         """(W1/6): Divisible Sum Pairs"""

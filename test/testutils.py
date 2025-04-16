@@ -2,10 +2,8 @@
 Helpers for testing
 """
 import unittest
-from typing import ClassVar
+from typing import ClassVar, Iterator
 from pathlib import Path
-from typing import Iterator
-
 
 
 class TestCase(unittest.TestCase):
@@ -15,11 +13,12 @@ class TestCase(unittest.TestCase):
 
     # holds the globbed' paths for a given TestCase
     tcs: ClassVar[list[Path]]
+    glob_pattern: ClassVar[str] = "w1/tc/*.txt"
 
     @classmethod
     def setUpClass(cls):
         """Get all the matching test case files"""
-        cls.tcs = sorted(Path("w1/tc").glob("5_*.txt"))
+        cls.tcs = sorted(Path("w1/tc").glob(cls.glob_pattern))
 
     def read_lines(self, path: Path) -> Iterator[str]:
         """
