@@ -20,4 +20,8 @@ class DivisibleSumPairsTests(testutils.TestCase):
 
     def test_divisible_sum_pairs(self):
         """(W1/6): Divisible Sum Pairs"""
-        pass
+        for tc in self.tcs:
+
+            # use a subtest scopeV
+            with self.subTest(tc=tc):
+                pass

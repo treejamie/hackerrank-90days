@@ -22,7 +22,7 @@ class CamelCaseTests(testutils.TestCase):
         # get the test data
         for tc in self.tcs:
 
-            # run subtest
+            # use a subtest scope
             with self.subTest(tc=tc):
                 # read in the lines
                 lines = list(self.read_lines(Path(tc)))
