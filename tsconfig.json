@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "baseUrl": ".",        // optional: allows absolute imports like from "w1/helpers"
+    "paths": {
+      "*": ["*"]
+    }
+  },
+  "include": ["w*/**/*.ts", "scripts/**/*.ts"],
+  "exclude": ["node_modules"]
+}
