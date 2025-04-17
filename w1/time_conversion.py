@@ -20,6 +20,7 @@ def time_conversion(s:str) -> str:
 
     Example:
         >>> time_conversion('07:05:45PM')
+        19:05:45
     """
     # first get it from a string into a datetime
     # note: gotcha when parsing the hour - 12 hour parse - not 24!
