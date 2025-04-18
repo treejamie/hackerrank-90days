@@ -1,9 +1,9 @@
 # [Hackerrank 90 days](https://www.hackerrank.com/interview/preparation-kits/three-month-preparation-kit/three-month-week-three/challenges)
 
 
-Don't judge the layout of this repository in terms of "that's not how you lay out an Elixir project, or a Go project or a ...".  Feel free to judge me on the code in this repository. Python was my strongest language when I started this and I think that shows. I'm hoping by the time I am at the end of it all, it's harder to tell what's my strongest language.
+This repo’s layout isn’t idiomatic to any one language — Python was my strongest when I started, and it probably shows. I’m aiming to make that less obvious as I go through the challenges that by the end.
 
-If you spot anything that you think I could do better, open a pull request. That'd be lovely
+Spot something I could improve? A pull request would be lovely.
 
 
 ## 🙋 Why?
