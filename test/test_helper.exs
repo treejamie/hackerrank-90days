@@ -1,4 +1,4 @@
-defmodule Hackerrank.Test.Helper do
+defmodule HackerRank.Test.Helper do
   @moduledoc """
   A set of utilities for testing the Elixir HackerRank challenges
   """
