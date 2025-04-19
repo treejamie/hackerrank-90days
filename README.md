@@ -44,3 +44,38 @@ None of the code in this repository has solutions written by AI. You'll just hav
 My approach to using LLM's and AI is to treat them like a teaching assistant who knows a lot but isn't always right. They're a great tool for learning and helping you understand a thing, but they are not (_in my humble opinion_) suitable for production output in most contexts.
 
 Also, this is about learning and using LLM's for solutions doesn't help me - at all. It only pushes the barrier to learning further away from me.
+
+
+## Quality & Assurance
+
+### Elixir
+
+There are two quality checks ran on the challenges -  tests and static analysis.
+
+Tests are handled with ExUnit and are ran as follows:
+
+```bash
+mix test w*
+```
+
+Static analysis is done with dialyzer and is ran as follows:
+
+```bash
+mix compile
+mix dialyzer
+```
+
+The main aim of using dialyzer is to get some practice in with being clear about `@spec`.
+
+### Go
+
+```bash
+cd w1
+go test -v
+```
+
+### TypeScript
+
+```bash
+pnpm vitest run
+```

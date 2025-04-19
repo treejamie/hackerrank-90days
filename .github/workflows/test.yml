@@ -4,6 +4,36 @@ on:
   push
 
 jobs:
+  dialyzer:
+    if: contains(github.ref, 'elixir/')
+    name: Dialyzer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Elixir
+        uses: erlef/setup-beam@v1
+        with:
+          elixir-version: '1.18.3'
+          otp-version: '27.3.2'
+
+      - name: Install dependencies
+        run: mix deps.get
+
+      - name: Cache Dialyzer PLT
+        uses: actions/cache@v3
+        with:
+          path: _build/dev/dialyxir_*
+          key: plt-${{ runner.os }}-${{ hashFiles('mix.lock') }}
+          restore-keys: |
+            plt-${{ runner.os }}-
+
+      - name: Compile
+        run: mix compile
+
+      - name: Run Dialyzer
+        run: mix dialyzer
+
   test-elixir:
     if: contains(github.ref, 'elixir/')
     name: Test Elixir

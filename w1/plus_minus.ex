@@ -9,6 +9,7 @@ defmodule Hackerrank.W1.PlusMinus do
     |> List.to_string()
   end
 
+  @spec challenge([integer()]) :: [String.t()]
   def challenge(arr) do
 
     # length is accessed a few times
