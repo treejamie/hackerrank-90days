@@ -44,3 +44,25 @@ None of the code in this repository has solutions written by AI. You'll just hav
 My approach to using LLM's and AI is to treat them like a teaching assistant who knows a lot but isn't always right. They're a great tool for learning and helping you understand a thing, but they are not (_in my humble opinion_) suitable for production output in most contexts.
 
 Also, this is about learning and using LLM's for solutions doesn't help me - at all. It only pushes the barrier to learning further away from me.
+
+
+## Running Tests
+
+### Elixir
+
+```
+mix test w*
+```
+
+### Go
+
+```bash
+cd w1
+go test -v
+```
+
+### TypeScript
+
+```bash
+pnpm vitest run
+```
