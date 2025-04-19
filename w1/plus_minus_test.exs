@@ -8,8 +8,8 @@ defmodule Hackerank.W1.PlusMinusTest do
 
   test "run the tests" do
     Helper.test_all(@pattern, &parse_args/1, &parse_expected/1 )
-    |> Enum.each(fn {_label, args, expected} ->
-      assert PlusMinus.challenge(args) == expected
+    |> Enum.each(fn [args, expected] ->
+       assert PlusMinus.challenge(args) == expected
     end)
   end
 

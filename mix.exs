@@ -14,5 +14,5 @@ defmodule Hackerank.MixProject do
   end
 
   defp elixirc_paths(:test), do: ["tests", "w1", "w2", "w3", "w4", "w5"]
-  defp elixirc_paths(_), do: ["lib"]
+  defp elixirc_paths(_), do: ["lib", "w1", "w2", "w3", "w4", "w5"]
 end

@@ -36,8 +36,7 @@ defmodule Hackerrank.Test.Helper do
     expected = exp_fn.(expected)
 
     # and done
-    # [args, expected]
-    {tc, args, expected}
+    [args, expected]
   end
 
 end
