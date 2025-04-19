@@ -3,7 +3,6 @@ defmodule HackerRank.W1.TimeConversionTests do
   alias HackerRank.Test.Helper
   alias HackerRank.W1.TimeConversion
 
-
   @pattern ~w"w1/tc/3_*.txt"
 
   test "run the tests" do
@@ -15,6 +14,5 @@ defmodule HackerRank.W1.TimeConversionTests do
 
   def parse_args([raw]), do: raw
   def parse_expected([raw]), do: raw
-
 
 end
