@@ -1,4 +1,4 @@
-defmodule Hackerank.MixProject do
+defmodule HackerRank.MixProject do
   use Mix.Project
 
   @doc """

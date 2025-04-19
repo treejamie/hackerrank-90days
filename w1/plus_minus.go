@@ -44,7 +44,7 @@ func PlusMinus(arr []int32) [3]string {
 	solution[1] = fmt.Sprintf("%.6f", n_ratio)
 	solution[2] = fmt.Sprintf("%.6f", z_ratio)
 
-	// Hackerank wants you to print them
+	// HackerRank wants you to print them
 	for _, value := range solution {
 		fmt.Println(value)
 	}

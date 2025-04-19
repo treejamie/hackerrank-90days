@@ -1,4 +1,4 @@
-defmodule  Hackerrank.W1.MiniMaxSum do
+defmodule  HackerRank.W1.MiniMaxSum do
   @moduledoc """
   Mini Max Sum – Challenge 2 – Week 1
   <https://www.hackerrank.com/challenges/three-month-preparation-kit-mini-max-sum/problem>

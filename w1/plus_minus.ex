@@ -1,4 +1,4 @@
-defmodule Hackerrank.W1.PlusMinus do
+defmodule HackerRank.W1.PlusMinus do
   @doc """
   The challenge function.
   """
