@@ -1,67 +1,77 @@
 [![Tests](https://github.com/treejamie/hackerrank-90days/actions/workflows/test.yml/badge.svg)](https://github.com/treejamie/hackerrank-90days/actions/workflows/test.yml)
 
+# [HackerRank 90 Days](https://www.hackerrank.com/interview/preparation-kits/three-month-preparation-kit/three-month-week-three/challenges)
 
-# [Hackerrank 90 days](https://www.hackerrank.com/interview/preparation-kits/three-month-preparation-kit/three-month-week-three/challenges)
+This repo’s layout isn’t idiomatic to any one language — it’s a mix of Elixir, Go, Python, and TypeScript.
 
-
-This repo’s layout isn’t idiomatic to any one language — Python was my strongest when I started, and it probably shows. I’m aiming to make that less obvious as I go through the challenges that by the end.
-
-Spot something I could improve? A pull request would be lovely.
-
+Spot something I could improve? Open an issue and point it out — that would be swell.
 
 ## 🙋 Why?
 
-The 90 days worth of interview preparation on hackerrank. Public so that others may witness the learning and re-awakening of well rested neural pathways and the creation of new ones.
+The HackerRank 90-day course was designed as a three-month prep for recruitment pipelines. Whilst I started out with that intention, I’m not using it for that purpose anymore (_at least not directly_). I’m using it to apply my Python and Elixir knowledge to scaffold my development in Go and TypeScript.
 
-I'll working through the challenges in Python and then I'll be starting from scratch in Go, Elixir and TypeScript. Maybe even rust. I didn't start out with this aim, but that's how I ended up.  By the start of week five of doing them in Python I decided to use the challenges as a means of supporting my learning in other languages.
+What I’m noticing, though, is that it’s also improving my authoring skills more broadly.
 
-I don't think these challenges will make me a better programmer in themselves, but the act doing each one, in multiple languages probably will. 
+I started in January. At first, I just wanted to get through it in Python — a collection of scripts to store solutions. Then I added per-file unit testing. Then I started doing the challenges in different languages, and it evolved from there. Now it’s basically a code dojo for me, where I’m free to pick a task and write it up in a bunch of languages.
 
+I’ll be very pleased if I complete these challenges by the end of 2025 in four languages: Python, Elixir, Go, and TypeScript. The aim is to get a nice 25% language distribution across the repository and to demonstrate competence in basic project layout, standard libraries, testing methodologies, and — most importantly — low-complexity solutions.
+
+For example, many challenges can be solved easily with an `O(n^2)` approach, but HackerRank will timeout when you submit inefficient code. That’s a great forcing function — you’re not allowed to be lazy.
 
 ## 🧱 Structure
 
-As I go back through the each week, there will be a directory called testcases and in each will be a textfile containing the documented `stdin` and the expected output. Hackerrank isn't consistent between returning values and printing them out, so my code here will always default to returning values as it makes testing much less finicky.
+The project is structured by **weeks**, not by language. That is: none of the projects follow idiomatic layouts for their respective languages.
 
-Until I'm back to week five the structure will be over the place, but once I've been through each week in Go it'll get cleaner.
+Each week has a folder named `w1`, `w2`, etc. Inside each is a `tc` (_test cases_) folder, which contains test files in a very specific format. For example, here’s the test case data for a made-up challenge where you’re given two integers and must sum them. Arguments are separated from expected output by two blank lines:
 
-The format for the test cases is stdin inputs seperated by newlines and then the expected output seperated by two newlines.
+```plaintext
+1 2
+
+3
+```
+
+This format ensures each challenge across all languages consumes the same input/output.
 
 ## 📅 Three Months?
 
-Unlikley I will get through these in six months let alone three, so I'm not binding myself to any timeframe. Learning takes time and one of the things I am focused on right now is taking my programming up a level that I always aspired to when I saw it in others - to be language agnostic.
+This course was meant to be three months long, but I’m not treating it that way. Technically, you’re supposed to use HackerRank’s interface to author your code — but that’s a horrific experience.
 
-I'm not the best programmer on Earth, but I think I have the potential to be a pretty good one. 
+If I finish all the challenges in four languages by the end of 2025, I’ll be very pleased.
 
-## Idiomaticity 😱
+## 😱 Idiomaticity
 
 (_I made that word up_)
 
-This repository is a mixture of a number of languages and I've prioritised coexistance of languages at the expense of any one languages typical project layout. For example the Elixir stuff isn't in a typical mix project. It was more important to the intention of what I'm doing here to have the languages side by side, so you can see similarities and differences.
+This repository is a mix of several languages, and I’ve prioritized their coexistence over idiomatic project layout. For example, the Elixir code isn’t structured like a proper Mix project — same with TypeScript, Python, and Go.
 
-Obviously, I keep whatever idoimatic language specific skills I possess in my approach to writing the code.
+The point is to compare approaches side by side, not to build polished, standalone apps.
+
+That said, I still try to write idiomatic code within each language’s norms.
 
 ## 🤖 LLM usage
 
-None of the code in this repository has solutions written by AI. You'll just have to take my word for that. In some solutions I used AI to reason about things and to discuss approaches, but all of the code is mine.
+### Code
 
-My approach to using LLM's and AI is to treat them like a teaching assistant who knows a lot but isn't always right. They're a great tool for learning and helping you understand a thing, but they are not (_in my humble opinion_) suitable for production output in most contexts.
+None of the challenge solutions are directly written by AI. I do use LLMs while coding — they’re great scaffolds for learning.
 
-Also, this is about learning and using LLM's for solutions doesn't help me - at all. It only pushes the barrier to learning further away from me.
+### Documentation & Comments
+
+Most comments were written by me and then passed through an LLM to make them more succinct. I tend to be overly wordy — LLMs are great at "neutral speak".
 
 
-## Quality & Assurance
+## ✅ Test & Quality
 
 ### Elixir
 
 There are two quality checks ran on the challenges -  tests and static analysis.
 
-Tests are handled with ExUnit and are ran as follows:
+Tests are handled with ExUnit:
 
 ```bash
 mix test w*
 ```
 
-Static analysis is done with dialyzer and is ran as follows:
+Static analysis is done with Dialyzer:
 
 ```bash
 mix compile
@@ -81,4 +91,11 @@ go test -v
 
 ```bash
 pnpm vitest run
+```
+
+
+### Python
+
+```bash
+python -m unittest -v  */*_test.py
 ```
