@@ -1,3 +1,6 @@
+[![Tests](https://github.com/treejamie/hackerrank-90days/actions/workflows/test.yml/badge.svg)](https://github.com/treejamie/hackerrank-90days/actions/workflows/test.yml)
+
+
 # [Hackerrank 90 days](https://www.hackerrank.com/interview/preparation-kits/three-month-preparation-kit/three-month-week-three/challenges)
 
 
