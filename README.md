@@ -46,13 +46,26 @@ My approach to using LLM's and AI is to treat them like a teaching assistant who
 Also, this is about learning and using LLM's for solutions doesn't help me - at all. It only pushes the barrier to learning further away from me.
 
 
-## Running Tests
+## Quality & Assurance
 
 ### Elixir
 
-```
+There are two quality checks ran on the challenges -  tests and static analysis.
+
+Tests are handled with ExUnit and are ran as follows:
+
+```bash
 mix test w*
 ```
+
+Static analysis is done with dialyzer and is ran as follows:
+
+```bash
+mix compile
+mix dialyzer
+```
+
+The main aim of using dialyzer is to get some practice in with being clear about `@spec`.
 
 ### Go
 
