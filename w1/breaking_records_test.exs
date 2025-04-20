@@ -8,7 +8,6 @@ defmodule HackerRank.W1.BreakingRecordsTests do
   test "run the tests" do
     Helper.test_all(@pattern, &parse_args/1, &parse_expected/1 )
     |> Enum.each(fn [args, expected] ->
-      IO.inspect(args)
       assert BreakingRecords.challenge(args) == expected
     end)
   end
@@ -17,6 +16,8 @@ defmodule HackerRank.W1.BreakingRecordsTests do
     # now turn in to Integers
     raw |> String.split(" ") |> Enum.map(&String.to_integer/1)
   end
-  def parse_expected([raw]), do: raw
+  def parse_expected([raw]) do
+    raw |> String.split(" ") |> Enum.map(&String.to_integer/1)
+  end
 
 end
