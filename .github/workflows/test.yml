@@ -20,13 +20,13 @@ jobs:
       - name: Install dependencies
         run: mix deps.get
 
-      - name: Cache Dialyzer PLT
-        uses: actions/cache@v3
-        with:
-          path: _build/dev/dialyxir_*
-          key: plt-${{ runner.os }}-${{ hashFiles('mix.lock') }}
-          restore-keys: |
-            plt-${{ runner.os }}-
+      # - name: Cache Dialyzer PLT
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: _build/dev/dialyxir_*
+      #     key: plt-${{ runner.os }}-${{ hashFiles('mix.lock') }}
+      #     restore-keys: |
+      #       plt-${{ runner.os }}-
 
       - name: Compile
         run: mix compile
