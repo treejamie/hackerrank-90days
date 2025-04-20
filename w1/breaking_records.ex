@@ -22,37 +22,20 @@ defmodule HackerRank.W1.BreakingRecords do
       [4, 0]
   """
   @spec challenge([integer()]) :: [integer()]
-  def challenge(scores) do
-    # calculate the minimum and maximum records
-    process_scores(scores, [], [], [])
-  end
+  def challenge([]), do: [0, 0]
+  def challenge([first | rest]), do: process_scores(rest, first, first, 0, 0)
 
-  def process_scores([current | rest], processed, min_b, max_b) do
 
-    # get the max value in processed, if there is no value
-    # add the current to procesed and recurse.
-    mx = Enum.max(processed, fn -> :nil end)
-    if mx == :nil do
-      process_scores(rest, [current | processed], min_b, max_b)
-    end
+  defp process_scores([], _min, _max, min_b, max_b), do: [max_b, min_b]
 
-    # get the minimum value in processed, and fallback to zero
-    mn = Enum.min(processed, fn -> 0 end)
-
-    # now process everything
+  defp process_scores([s | rest], min, max, min_b, max_b) do
     cond do
-      current > mx ->
-        process_scores(rest, [current| processed] , min_b, [current| max_b])
-
-      current < mn ->
-        process_scores(rest, [current| processed], [ current | min_b] , max_b)
-
+      s > max ->
+        process_scores(rest, min, s, min_b, max_b + 1)
+      s < min ->
+        process_scores(rest, s, max, min_b + 1, max_b)
       true ->
-        process_scores(rest, [current | processed] , min_b, max_b)
+        process_scores(rest, min, max, min_b, max_b)
     end
-  end
-
-  def process_scores([], _processed, min_b, max_b) do
-    [length(max_b), length(min_b)]
   end
 end
