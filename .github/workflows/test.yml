@@ -93,7 +93,9 @@ jobs:
         pip install -r requirements_test.txt
         pip install pylint
     - name: (Python) Pylint
-      run: pylint w1/
+      run: |
+        source venv/bin/activate
+        pylint w1/
 
   python-test:
     if: contains(github.ref, 'python/')
