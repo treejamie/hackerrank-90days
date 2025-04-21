@@ -21,42 +21,21 @@ def breaking_records(scores: List[int]) -> List[int]:
         >>> breaking_records([3, 4, 21, 36, 10, 28, 35, 5, 24, 42])
         [4, 0]
     """
-    # keep track of the low and high scores.
-    hc = [] # note: final high count is this list length
-    lc = [] # note: final low count is the count of this list
+    # keep track of the counts of breaks for min score and max score
+    min_b = max_b =0
 
-    # so that we can keep track of the things processes
-    processed = []
+    # start off with 0 for max and min counts
+    mx = mn = scores[0]
 
-    # iterate over the scores
-    for s in scores:
-        # max min are functions of what is processed
-        try:
-            _mx = max(processed)
-        except ValueError:
-            # zero is not class as a high score so if the score
-            # was zero, count it as processed and continue on.
-            processed.append(s)
-            continue
+    for score in scores[1:]:
 
-        try:
-            _mn = min(processed)
-        except ValueError:
-            _mn = 0
+        if score > mx:
+            mx = score
+            max_b += 1
 
-        # count the highs and lows
-        if s > _mx:
-            hc.append(s)
+        elif score < mn :
+            mn = score
+            min_b += 1
 
-        if s < _mn:
-            lc.append(s)
-        
-        # value was processesed, so append it
-        processed.append(s)
-
-
-    # done, return the count
-    return [
-        len(hc),
-        len(lc)
-    ]
+    # all done
+    return [max_b, min_b]

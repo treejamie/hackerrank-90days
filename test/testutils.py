@@ -18,7 +18,8 @@ class TestCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """Get all the matching test case files"""
-        cls.tcs = sorted(Path("w1/tc").glob(cls.glob_pattern))
+        # Path.glob is lazy, so wrap in list to get iteration ready paths...
+        cls.tcs = list(Path().glob(cls.glob_pattern))
 
     def read_lines(self, path: Path) -> Iterator[str]:
         """
