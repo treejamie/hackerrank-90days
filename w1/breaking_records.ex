@@ -18,7 +18,7 @@ defmodule HackerRank.W1.BreakingRecords do
 
   ## Example
 
-      iex> breaking_records([3, 4, 21, 36, 10, 28, 35, 5, 24, 42])
+      iex> BreakingRecords.challenge([3, 4, 21, 36, 10, 28, 35, 5, 24, 42])
       [4, 0]
   """
   @spec challenge([integer()]) :: [integer()]

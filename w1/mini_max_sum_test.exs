@@ -3,6 +3,7 @@ defmodule HackerRank.W1.MiniMaxSumTests do
   use ExUnit.Case
   alias HackerRank.Test.Helper
   alias HackerRank.W1.MiniMaxSum
+  doctest HackerRank.W1.MiniMaxSum
 
   @pattern "w1/tc/2_*.txt"
 
