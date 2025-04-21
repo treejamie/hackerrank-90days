@@ -3,6 +3,7 @@ defmodule HackerRank.W1.PlusMinusTest do
   use ExUnit.Case
   alias HackerRank.Test.Helper
   alias HackerRank.W1.PlusMinus
+  doctest HackerRank.W1.PlusMinus
 
   @pattern "w1/tc/1_*.txt"
 

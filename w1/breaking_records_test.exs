@@ -2,6 +2,7 @@ defmodule HackerRank.W1.BreakingRecordsTests do
   use ExUnit.Case
   alias HackerRank.Test.Helper
   alias HackerRank.W1.BreakingRecords
+  doctest HackerRank.W1.BreakingRecords
 
   @pattern ~w"w1/tc/4_*.txt"
 

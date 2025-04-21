@@ -16,7 +16,7 @@ defmodule  HackerRank.W1.MiniMaxSum do
 
   ## Examples
 
-      iex> mini_max_sum([1, 2, 3, 4, 5])
+      iex> MiniMaxSum.challenge([1, 2, 3, 4, 5])
       [10, 14]
   """
   @spec challenge([integer()]) :: [integer()]

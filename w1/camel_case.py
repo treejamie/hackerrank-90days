@@ -82,8 +82,8 @@ def camel_case(token: str) -> str:
     return result
 
 
-# HackerRank made you write all of the runner for this one as well.
+# HackerRank made you write this in the style of a weird runner.
 # that doesn't seem all that 'basic'
 if __name__ == '__main__' and PRINT:
-    for line in sys.stdin.readlines(): 
+    for line in sys.stdin.readlines():
         camel_case(line.strip())
