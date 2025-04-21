@@ -2,6 +2,7 @@
 Tests for Breaking Records
 """
 from pathlib import Path
+from typing import ClassVar
 from test import testutils
 from w1.breaking_records import breaking_records
 
@@ -11,12 +12,12 @@ class BreakRecordsTest(testutils.TestCase):
     """
     Breaking records test cases
     """
-    glob_pattern = "w1/tc/4_*.txt"
+    glob_pattern: ClassVar[str] = "w1/tc/4_*.txt"
 
     def test_breaking_records(self):
         """(W1/4): Breaking Records"""
-        for tc in self.tcs:
 
+        for tc in self.tcs:
             # use a subtest scope
             with self.subTest(tc=tc):
                 # read in the lines
@@ -29,4 +30,5 @@ class BreakRecordsTest(testutils.TestCase):
                 expected = [int(value) for value in lines[3].split()]
 
                 # we get what we expected
-                self.assertEqual(breaking_records(args), expected)
+                results = breaking_records(args)
+                self.assertEqual(results, expected)
