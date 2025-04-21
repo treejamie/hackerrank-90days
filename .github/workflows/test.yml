@@ -4,7 +4,7 @@ on:
   push
 
 jobs:
-  dialyzer:
+  elixir-dialyzer:
     if: contains(github.ref, 'elixir/')
     name: Dialyzer
     runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
       - name: Run Dialyzer
         run: mix dialyzer
 
-  test-elixir:
+  elixir-test:
     if: contains(github.ref, 'elixir/')
     name: Test Elixir
     runs-on: ubuntu-latest
@@ -76,15 +76,33 @@ jobs:
       - name: (Go) WK1 tests
         working-directory: w1
         run: go test -v
-  test-python:
+  python-pylint:
+    if: contains(github.ref, 'python/') 
+    name: Pylint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+    - name: Set up virtualenv
+    run: |
+      python -m venv venv
+      source venv/bin/activate
+      pip install -r req_test.txt
+      pip install pylint
+    - name: (Python) Pylint
+      run: pylint w1/
+
+  python-test:
     if: contains(github.ref, 'python/')
     name: Test Python
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-python@v1
+    - uses: actions/setup-python@v5
       with:
-        python-version: '3.11'
+        python-version: '3.13'
     - name: (Python) tests
       run: python -m unittest -v */*_test.py
     - name: (Python) WK2 tests
