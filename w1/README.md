@@ -39,7 +39,7 @@ Convert time from 12-hour AM/PM format to 24-hour military time.
 Track how many times a player’s highest and lowest scores are broken during a season of games.
 
 | Python | Elixir | TypeScript | Go | 
-|--------|--------|------------|----|--------|
+|--------|--------|------------|----|
 |    ✅   |    ✅    |      ➖      |   ➖  |  
 
 ⸻
