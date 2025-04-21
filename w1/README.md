@@ -7,7 +7,7 @@ Given an array of integers, calculate the ratios of positive, negative, and zero
 
 | Python | Elixir | TypeScript | Go |
 |--------|--------|------------|----|
-|   ✅  |    ✅    |      ➖      |  ✅  |  
+|   ✅  |    ✅    |     ➖     |  ✅  |  
 
 
 
@@ -18,8 +18,8 @@ Given an array of integers, calculate the ratios of positive, negative, and zero
 Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers.
 
 | Python | Elixir | TypeScript | Go |
-|--------|--------|------------|----|
-|    ✅   |    ✅    |      ➖      |  ✅  |
+|--------|--------|-----------|----|
+|   ✅   |   ✅   |     ➖     |  ✅  |
 
 ⸻
 
@@ -29,7 +29,7 @@ Convert time from 12-hour AM/PM format to 24-hour military time.
 
 | Python | Elixir | TypeScript | Go |
 |--------|--------|------------|----|
-|    ✅   |    ✅    |     ✅        | ✏️    |
+|   ✅   |   ✅    |    ✅      | ✏️  |
 
 
 ⸻
@@ -50,7 +50,7 @@ Typically involves parsing or transforming camelCase and PascalCase strings (e.g
 
 | Python | Elixir | TypeScript | Go | 
 |--------|--------|------------|----|
-|    ✅   |     ➖     |      ➖      | ➖    |
+|   ✅   |  ✅    |     ➖     | ➖    |
 
 
 ⸻
@@ -62,7 +62,7 @@ Count the number of (i, j) index pairs such that i < j and the sum of arr[i] + a
 
 | Python | Elixir | TypeScript | Go | 
 |--------|--------|------------|----|
-|    ✅   |  ➖   |      ➖      |  ➖    |
+|    ✅   |  ➖   |    ➖      |  ➖    |
 
 
 ⸻
@@ -75,4 +75,4 @@ Given a list of input strings and a set of query strings, return the number of t
 
 | Python | Elixir | TypeScript | Go | 
 |--------|--------|------------|----|
-|    ✅   |     ➖     |      ➖      | ➖    |
+|    ✅   |  ➖   |     ➖      | ➖    |
