@@ -19,6 +19,7 @@ class BreakRecordsTest(testutils.TestCase):
 
         for tc in self.tcs:
             # use a subtest scope
+            print(self.tcs)
             with self.subTest(tc=tc):
                 # read in the lines
                 lines = list(self.read_lines(Path(tc)))
