@@ -95,7 +95,7 @@ jobs:
     - name: (Python) Pylint
       run: |
         source venv/bin/activate
-        pylint w1/
+        pylint w1/ --fail-under=9.46 test
 
   python-test:
     if: contains(github.ref, 'python/')
