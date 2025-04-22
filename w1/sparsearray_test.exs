@@ -2,7 +2,7 @@ defmodule HackerRank.W1.SparseArrayTest do
   use ExUnit.Case
   alias HackerRank.Test.Helper
   alias HackerRank.W1.SparseArray
-  #doctest HackerRank.W1.SparseArray
+  doctest HackerRank.W1.SparseArray
 
 
   @pattern ~w"w1/tc/7_*.txt"

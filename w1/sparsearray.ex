@@ -17,13 +17,18 @@ defmodule HackerRank.W1.SparseArray do
   ## Example:
       iex> SparseArray.challenge(["aba", "baba", "aba", "xzxb"], ["aba", "xzxb", "ab"])
       [2, 1, 0]
-
   """
-  @spec challenge(list(integer()), list(integer())):: list(integer)
+  @spec challenge([String.t()], [String.t()]) :: [integer()]
   def challenge(strings, queries) do
-    IO.inspect(strings)
-    IO.inspect(queries)
-    [1 ]
+    queries
+    |> Enum.reduce([], fn query, acc ->
+      # compile the regex
+      r = Regex.compile!("^#{query}$")
 
+      # now do the count
+      count  = Enum.count(strings, fn s -> Regex.match?(r, s) end)
+      acc ++ [count]
+    end)
   end
+
 end
