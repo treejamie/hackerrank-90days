@@ -62,7 +62,7 @@ Count the number of (i, j) index pairs such that i < j and the sum of arr[i] + a
 
 | Python | Elixir | TypeScript | Go | 
 |--------|--------|------------|----|
-|    ✅   |  ➖   |    ➖      |  ➖    |
+|   ✅   |   ✅   |    ➖      |  ➖    |
 
 
 ⸻
