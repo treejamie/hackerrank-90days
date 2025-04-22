@@ -23,13 +23,13 @@ defmodule HackerRank.W1.DivisibleSumPairs do
 
   @spec challenge(integer(), integer(), list[integer()]) :: integer()
   def challenge(_n, k, arr) do
-
     # This is a recursy' thing
-    divisible_sum_pairs(k, arr, %{}, 0)
+    count_pairs(k, arr, %{}, 0)
   end
 
-  defp divisible_sum_pairs(_k, [],_fmap, count), do: count
-  defp divisible_sum_pairs(k, arr, fmap, count) do
+  # Tail recursive
+  defp count_pairs(_k, [],_fmap, count), do: count
+  defp count_pairs(k, arr, fmap, count) do
     # get the value
     [value | rest] = arr
 
@@ -39,7 +39,7 @@ defmodule HackerRank.W1.DivisibleSumPairs do
     # get the complement or zero if mod is zero
     comp = if mod == 0, do: 0, else: k - mod
 
-    # if comp is in fmap, append the value of hit to count
+    # increment count by the frequency of the complement
     count =
       case Map.get(fmap, comp) do
         nil -> count
@@ -50,7 +50,7 @@ defmodule HackerRank.W1.DivisibleSumPairs do
     fmap = Map.update(fmap, mod, 1, &(&1 + 1))
 
     # now go again
-    divisible_sum_pairs(k, rest, fmap, count)
+    count_pairs(k, rest, fmap, count)
 
   end
 end
