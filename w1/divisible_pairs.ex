@@ -21,7 +21,7 @@ defmodule HackerRank.W1.DivisibleSumPairs do
     2
   """
 
-  @spec challenge(integer(), integer(), list[integer()]) :: integer()
+  @spec challenge(integer(), integer(), list(integer())) :: integer()
   def challenge(_n, k, arr) do
     # This is a recursy' thing
     count_pairs(k, arr, %{}, 0)
