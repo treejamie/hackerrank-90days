@@ -21,14 +21,13 @@ defmodule HackerRank.W1.SparseArray do
   @spec challenge([String.t()], [String.t()]) :: [integer()]
   def challenge(strings, queries) do
     queries
-    |> Enum.reduce([], fn query, acc ->
-      # compile the regex
-      r = Regex.compile!("^#{query}$")
-
-      # now do the count
-      count  = Enum.count(strings, fn s -> Regex.match?(r, s) end)
-      acc ++ [count]
-    end)
+    |> Enum.map(fn query ->
+        # r = Regex.compile!("^#{query}$")
+        # Enum.count(strings, fn s -> Regex.match?(r, s) end)
+        # Regexs work, but the above regex is effectively checking equality
+        # So instead, just compare strings. Same thing, faster result.
+        Enum.count(strings, fn s -> s == query end)
+      end)
   end
 
 end
