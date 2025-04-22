@@ -15,9 +15,9 @@ So below is a table of challenges that I consider to be complete, and to have be
 
 | |                         | Python                  | Elixir                  | TypeScript    | Go    |
 |-|-                        |-                        |-                        |-              |-      |  
-| W1/1| Plus Minus          |[![PR](img/pr.svg)][11py]|[![PR](img/pr.svg)][11ex]|     ➖        |  ✅   |  
-| W1/2| Mini Max Sum        |[![PR](img/pr.svg)][12py]|[![PR](img/pr.svg)][12ex]|     ➖        |  ✅   |  
-| W1/3| Time Conversion     |[![PR](img/pr.svg)][13py]|[![PR](img/pr.svg)][13ex]|[![PR](img/pr.svg)][13ts]|[![PR](img/pr.svg)][13go]|  
+| W1/1| Plus Minus          |[![PR](img/pr.svg)][11py]|[![PR](img/pr.svg)][11ex]|     ➖        |[![PR](img/pr.svg)][11go]|  
+| W1/2| Mini Max Sum        |[![PR](img/pr.svg)][12py]|[![PR](img/pr.svg)][12ex]|     ➖        |[![PR](img/pr.svg)][11go]|  
+| W1/3| Time Conversion     |[![PR](img/pr.svg)][13py]|[![PR](img/pr.svg)][13ex]|[![PR](img/pr.svg)][13ts]|[![PR](img/pr.svg)][11go]|  
 | W1/4| Breaking Records    |[![PR](img/pr.svg)][14py]|[![PR](img/pr.svg)][14ex]|     ➖        |   ➖   |  
 | W1/5| Camel Case          |[![PR](img/pr.svg)][15py]|[![PR](img/pr.svg)][15ex]|     ➖        |   ➖   |  
 | W1/6| Divisible Sum Pairs |[![PR](img/pr.svg)][16py]|[![PR](img/pr.svg)][16ex]|     ➖        |   ➖   |  
@@ -47,8 +47,8 @@ So below is a table of challenges that I consider to be complete, and to have be
 [16ts]: #
 [17ts]: #
 
-[11go]: #
-[12go]: #
+[11go]: https://github.com/treejamie/hackerrank-90days/pull/102
+[12go]: https://github.com/treejamie/hackerrank-90days/pull/105
 [13go]: https://github.com/treejamie/hackerrank-90days/pull/147
 [14go]: #
 [15go]: #
