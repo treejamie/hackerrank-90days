@@ -4,6 +4,45 @@
 
 This repo’s layout isn’t idiomatic to any one language — it’s a mix of Elixir, Go, Python, and TypeScript.
 
+## Quality
+
+When I first started these challenges, I was in a teaching job and I was completing them between classes and during times when my students had been tasked and was literally doing nothing. These challenges go all the way up to week 4/5. These are not my best work, I was more interested in making stuff work.  However, when I quit the teaching job and was able to sit down and focus on quality, I started everything again. I went over the week one python work and moved everything to a standard that any colleage, customer or employer would be more than happy with. 
+
+So below is a table of challenges that I consider to be complete, and to have been completed to a high professional standard that you'd expect from any work I was doing. Inline docs, testing, linting, static code analysis, CI/ CD etc.
+
+
+📝 == links to source code / doc tests
+
+🧪 == links to test files
+
+
+| |                         | Python                  | Elixir                  | TypeScript    | Go    |
+|-|-                        |-                        |-                        |-              |-      |  
+| W1/1| Plus Minus          |[![PR](img/pr.svg)][11py]|[![PR](img/pr.svg)][11ex]|     ➖        |  ✅   |  
+| W1/2| Mini Max Sum        |[![PR](img/pr.svg)][12py]|[![PR](img/pr.svg)][11ex]|     ➖        |  ✅   |  
+| W1/3| Time Conversion     |[![PR](img/pr.svg)][13py]|[![PR](img/pr.svg)][11ex]|      ✅       |   ➖   |  
+| W1/4| Breaking Records    |[![PR](img/pr.svg)][14py]|[![PR](img/pr.svg)][11ex]|     ➖        |   ➖   |  
+| W1/5| Camel Case          |[![PR](img/pr.svg)][15py]|[![PR](img/pr.svg)][11ex]|     ➖        |   ➖   |  
+| W1/6| Divisible Sum Pairs |[![PR](img/pr.svg)][16py]|[![PR](img/pr.svg)][11ex]|     ➖        |   ➖   |  
+| W1/7| Sparse Array        |[![PR](img/pr.svg)][17py]|  ➖     |     ➖        |   ➖   |  
+
+[11py]: https://github.com/treejamie/hackerrank-90days/pull/108
+[12py]: https://github.com/treejamie/hackerrank-90days/pull/108
+[13py]: https://github.com/treejamie/hackerrank-90days/pull/109
+[14py]: https://github.com/treejamie/hackerrank-90days/pull/111
+[15py]: https://github.com/treejamie/hackerrank-90days/pull/113
+[16py]: https://github.com/treejamie/hackerrank-90days/pull/114
+[17py]: https://github.com/treejamie/hackerrank-90days/pull/115
+
+[11ex]: https://github.com/treejamie/hackerrank-90days/pull/108
+[12ex]: https://github.com/treejamie/hackerrank-90days/pull/108
+[13ex]: https://github.com/treejamie/hackerrank-90days/pull/109
+[14ex]: https://github.com/treejamie/hackerrank-90days/pull/111
+[15ex]: https://github.com/treejamie/hackerrank-90days/pull/113
+[16ex]: https://github.com/treejamie/hackerrank-90days/pull/114
+[17ex]: https://github.com/treejamie/hackerrank-90days/pulv/115
+
+
 Spot something I could improve? Open an issue and point it out — that would be swell.
 
 ## 🙋 Why?
@@ -12,7 +51,7 @@ The HackerRank 90-day course was designed as a three-month prep for recruitment 
 
 What I’m noticing, though, is that it’s also improving my authoring skills more broadly.
 
-I started in January. At first, I just wanted to get through it in Python — a collection of scripts to store solutions. Then I added per-file unit testing. Then I started doing the challenges in different languages, and it evolved from there. Now it’s basically a code dojo for me, where I’m free to pick a task and write it up in a bunch of languages.
+I started in January. At first, I just wanted to get through it in Python — a collection of scripts to store solutions. Then I added per-file unit testing. Then I started doing the challenges in different languages, and it evolved from there. Now it’s basically a code dojo for me, where I’m working through
 
 I’ll be very pleased if I complete these challenges by the end of 2025 in four languages: Python, Elixir, Go, and TypeScript. The aim is to get a nice 25% language distribution across the repository and to demonstrate competence in basic project layout, standard libraries, testing methodologies, and — most importantly — low-complexity solutions.
 
