@@ -75,4 +75,4 @@ Given a list of input strings and a set of query strings, return the number of t
 
 | Python | Elixir | TypeScript | Go | 
 |--------|--------|------------|----|
-|    ✅   |  ➖   |     ➖      | ➖    |
+|    ✅   |  ✅   |     ➖      | ➖    |

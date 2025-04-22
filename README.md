@@ -55,6 +55,9 @@ So below is a table of challenges that I consider to be complete, and to have be
 [16go]: #
 [17go]: #
 
+### Week 2
+
+I'll update this README with week two once I've completed all the challenges in all the languages from week one.
 
 
 Spot something I could improve? Open an issue and point it out — that would be swell.
