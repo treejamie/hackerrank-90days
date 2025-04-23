@@ -13,15 +13,15 @@ So below is a table of challenges that I consider to be complete, and to have be
 
 ### Week 1
 
-| |                         | Python                  | Elixir                  | TypeScript    | Go    |
-|-|-                        |-                        |-                        |-              |-      |  
-| W1/1| Plus Minus          |[![PR](img/pr.svg)][11py]|[![PR](img/pr.svg)][11ex]|     ➖        |[![PR](img/pr.svg)][11go]|  
-| W1/2| Mini Max Sum        |[![PR](img/pr.svg)][12py]|[![PR](img/pr.svg)][12ex]|     ➖        |[![PR](img/pr.svg)][11go]|  
-| W1/3| Time Conversion     |[![PR](img/pr.svg)][13py]|[![PR](img/pr.svg)][13ex]|[![PR](img/pr.svg)][13ts]|[![PR](img/pr.svg)][11go]|  
-| W1/4| Breaking Records    |[![PR](img/pr.svg)][14py]|[![PR](img/pr.svg)][14ex]|     ➖        |   ➖   |  
-| W1/5| Camel Case          |[![PR](img/pr.svg)][15py]|[![PR](img/pr.svg)][15ex]|     ➖        |   ➖   |  
-| W1/6| Divisible Sum Pairs |[![PR](img/pr.svg)][16py]|[![PR](img/pr.svg)][16ex]|     ➖        |   ➖   |  
-| W1/7| Sparse Array        |[![PR](img/pr.svg)][17py]|[![PR](img/pr.svg)][17ex]|     ➖        |   ➖   |  
+| |                                | Python                  | Elixir                  | TypeScript    | Go    |
+|-|-                               |-                        |-                        |-              |-      |  
+| W1/1| [Plus Minus][c11]          |[![PR](img/pr.svg)][11py]|[![PR](img/pr.svg)][11ex]|     ➖        |[![PR](img/pr.svg)][11go]|  
+| W1/2| [Mini Max Sum][c12]        |[![PR](img/pr.svg)][12py]|[![PR](img/pr.svg)][12ex]|     ➖        |[![PR](img/pr.svg)][11go]|  
+| W1/3| [Time Conversion][c13]     |[![PR](img/pr.svg)][13py]|[![PR](img/pr.svg)][13ex]|[![PR](img/pr.svg)][13ts]|[![PR](img/pr.svg)][11go]|  
+| W1/4| [Breaking Records][c14]    |[![PR](img/pr.svg)][14py]|[![PR](img/pr.svg)][14ex]|     ➖        |   ➖   |  
+| W1/5| [Camel Case][c15]          |[![PR](img/pr.svg)][15py]|[![PR](img/pr.svg)][15ex]|     ➖        |   ➖   |  
+| W1/6| [Divisible Sum Pairs][c16] |[![PR](img/pr.svg)][16py]|[![PR](img/pr.svg)][16ex]|     ➖        |   ➖   |  
+| W1/7| [Sparse Array][c17]        |[![PR](img/pr.svg)][17py]|[![PR](img/pr.svg)][17ex]|     ➖        |   ➖   |  
 
 [11py]: https://github.com/treejamie/hackerrank-90days/pull/108
 [12py]: https://github.com/treejamie/hackerrank-90days/pull/108
@@ -155,3 +155,13 @@ pnpm vitest run
 ```bash
 python -m unittest -v  */*_test.py
 ```
+
+
+
+[c11]: https://www.hackerrank.com/challenges/three-month-preparation-kit-plus-minus/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-one
+[c12]: https://www.hackerrank.com/challenges/three-month-preparation-kit-mini-max-sum/problem?h_l=interview&isFullScreen=true&playlist_slugs%5B%5D%5B%5D=preparation-kits&playlist_slugs%5B%5D%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D%5B%5D=three-month-week-one
+[c13]: https://www.hackerrank.com/challenges/three-month-preparation-kit-time-conversion/problem?h_l=interview&isFullScreen=true&playlist_slugs%5B%5D%5B%5D=preparation-kits&playlist_slugs%5B%5D%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D%5B%5D=three-month-week-one
+[c14]: https://www.hackerrank.com/challenges/three-month-preparation-kit-breaking-best-and-worst-records/problem?h_l=interview&isFullScreen=true&playlist_slugs%5B%5D%5B%5D=preparation-kits&playlist_slugs%5B%5D%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D%5B%5D=three-month-week-one
+[c15]: https://www.hackerrank.com/challenges/three-month-preparation-kit-camel-case/problem?h_l=interview&isFullScreen=true&playlist_slugs%5B%5D%5B%5D=preparation-kits&playlist_slugs%5B%5D%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D%5B%5D=three-month-week-one
+[c16]: https://www.hackerrank.com/challenges/three-month-preparation-kit-divisible-sum-pairs/problem?h_l=interview&isFullScreen=true&playlist_slugs%5B%5D%5B%5D=preparation-kits&playlist_slugs%5B%5D%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D%5B%5D=three-month-week-one
+[c17]: https://www.hackerrank.com/challenges/three-month-preparation-kit-sparse-arrays/problem?h_l=interview&isFullScreen=true&playlist_slugs%5B%5D%5B%5D=preparation-kits&playlist_slugs%5B%5D%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D%5B%5D=three-month-week-one
